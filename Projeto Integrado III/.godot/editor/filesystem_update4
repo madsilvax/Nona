@@ -1,0 +1,6 @@
+res://scenes/mundo.tscn
+res://scenes/gatos.tscn
+res://scripts/gatos.gd
+res://scripts/Camera.gd
+res://scenes/jogador.tscn
+res://scripts/jogador.gd
