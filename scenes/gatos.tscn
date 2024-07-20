@@ -1,7 +1,22 @@
-[gd_scene load_steps=6 format=3 uid="uid://dnblctmdegat2"]
+[gd_scene load_steps=7 format=3 uid="uid://dnblctmdegat2"]
 
 [ext_resource type="Texture2D" uid="uid://2fdym0b0omh5" path="res://assets/sprite monstro.png" id="1_nyvxt"]
 [ext_resource type="Script" path="res://scripts/gatos.gd" id="2_ur2t3"]
+
+[sub_resource type="Animation" id="Animation_yjvnk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:anim_col")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
 [sub_resource type="Animation" id="Animation_awro8"]
 resource_name = "caminhar"
@@ -21,28 +36,18 @@ tracks/0/keys = {
 "values": [0, 1, 2, 3]
 }
 
-[sub_resource type="Animation" id="Animation_yjvnk"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:anim_col")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_unt86"]
 _data = {
 "RESET": SubResource("Animation_yjvnk"),
 "caminhar": SubResource("Animation_awro8")
 }
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wwrww"]
+radius = 0.15
+height = 0.5
+
 [node name="Gatos" type="Sprite3D" groups=["Gatos"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.32, 0)
 billboard = 2
 texture = ExtResource("1_nyvxt")
 hframes = 4
@@ -54,3 +59,6 @@ libraries = {
 "": SubResource("AnimationLibrary_unt86")
 }
 autoplay = "caminhar"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_wwrww")

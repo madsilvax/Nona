@@ -57,3 +57,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.332893, 0)
 
 [node name="Jogador" parent="." instance=ExtResource("3_xa5n1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+collision_mask = 15

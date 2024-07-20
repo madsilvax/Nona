@@ -1,15 +1,173 @@
-[gd_scene load_steps=3 format=3 uid="uid://dvb0texx0hvra"]
+[gd_scene load_steps=11 format=3 uid="uid://dvb0texx0hvra"]
 
 [ext_resource type="Script" path="res://scripts/jogador.gd" id="1_nj6ir"]
+[ext_resource type="Texture2D" uid="uid://dl7w3wm0uig20" path="res://assets/UI jogador/gun_sprites.png" id="2_xnqla"]
+[ext_resource type="AudioStream" uid="uid://dltkq7btx2bx1" path="res://assets/revolver_shot1.wav" id="3_nhvua"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_i1m5g"]
+height = 1.6
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ixea1"]
+atlas = ExtResource("2_xnqla")
+region = Rect2(512, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_07nfm"]
+atlas = ExtResource("2_xnqla")
+region = Rect2(1024, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kskar"]
+atlas = ExtResource("2_xnqla")
+region = Rect2(1536, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ktrmg"]
+atlas = ExtResource("2_xnqla")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_otax2"]
+atlas = ExtResource("2_xnqla")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2xfnw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ixea1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_07nfm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kskar")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ktrmg")
+}],
+"loop": false,
+"name": &"arremessar",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_otax2")
+}],
+"loop": false,
+"name": &"ocioso",
+"speed": 5.0
+}]
 
 [node name="Jogador" type="CharacterBody3D" groups=["Jogador"]]
+collision_mask = 14
 script = ExtResource("1_nj6ir")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
 shape = SubResource("CapsuleShape3D_i1m5g")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
+target_position = Vector3(0, 0, -1000)
+collision_mask = 14
+
+[node name="UI jogador" type="CanvasLayer" parent="."]
+
+[node name="mira" type="ColorRect" parent="UI jogador"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Pov" type="Control" parent="UI jogador"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 644.0
+offset_top = 356.0
+offset_right = 1009.0
+offset_bottom = 647.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Mao" type="AnimatedSprite2D" parent="UI jogador/Pov"]
+position = Vector2(252, 36)
+sprite_frames = SubResource("SpriteFrames_2xfnw")
+animation = &"ocioso"
+autoplay = "ocioso"
+
+[node name="Menu" type="Control" parent="UI jogador"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Derrota" type="Control" parent="UI jogador"]
+visible = false
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="UI jogador/Derrota"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -125.0
+offset_right = 125.0
+offset_bottom = 125.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="UI jogador/Derrota/Panel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 63.0
+offset_bottom = 86.0
+grow_horizontal = 2
+text = "PERDEU!"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="UI jogador/Derrota/Panel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = 44.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Tentar novamente"
+
+[node name="Vitoria" type="Control" parent="UI jogador"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Efeitos Sonoros" type="Node" parent="."]
+
+[node name="ArremessarFX" type="AudioStreamPlayer" parent="Efeitos Sonoros"]
+stream = ExtResource("3_nhvua")
