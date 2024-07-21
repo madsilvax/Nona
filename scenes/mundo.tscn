@@ -12,7 +12,7 @@ background_color = Color(0.560784, 0.835294, 0.937255, 1)
 albedo_color = Color(0.788235, 0.478431, 0.180392, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_bq76j"]
-size = Vector2(10, 10)
+size = Vector2(100, 100)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_j7xr1"]
 data = PackedVector3Array(5, 0, 5, -5, 0, 5, 5, 0, -5, -5, 0, 5, -5, 0, -5, 5, 0, -5)
@@ -53,7 +53,7 @@ mesh = SubResource("CylinderMesh_wprga")
 shape = SubResource("ConcavePolygonShape3D_oiqt1")
 
 [node name="Gatos" parent="." instance=ExtResource("3_tsgw8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.332893, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.332893, -18.6583)
 
 [node name="Jogador" parent="." instance=ExtResource("3_xa5n1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)

@@ -1,32 +1,23 @@
-[gd_scene load_steps=7 format=3 uid="uid://dnblctmdegat2"]
+[gd_scene load_steps=8 format=3 uid="uid://dnblctmdegat2"]
 
 [ext_resource type="Texture2D" uid="uid://2fdym0b0omh5" path="res://assets/sprite monstro.png" id="1_nyvxt"]
 [ext_resource type="Script" path="res://scripts/gatos.gd" id="2_ur2t3"]
+[ext_resource type="AudioStream" uid="uid://bpwt0jb1u71x4" path="res://assets/monster_die.wav" id="3_8ku05"]
+[ext_resource type="Script" path="res://scripts/gatossprite.gd" id="4_itqqo"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hdkx4"]
+radius = 0.2
+height = 0.6
 
 [sub_resource type="Animation" id="Animation_yjvnk"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:anim_col")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="Animation" id="Animation_awro8"]
-resource_name = "caminhar"
+resource_name = "catwalk"
 length = 0.8
 loop_mode = 1
 step = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:anim_col")
+tracks/0/path = NodePath("GatosSprite:anim_col")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -38,27 +29,39 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_unt86"]
 _data = {
-"RESET": SubResource("Animation_yjvnk"),
-"caminhar": SubResource("Animation_awro8")
+"catwalk": SubResource("Animation_yjvnk")
 }
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wwrww"]
-radius = 0.15
-height = 0.5
+[node name="Gatos" type="CharacterBody3D" groups=["Gatos"]]
+transform = Transform3D(0.994876, 0, 0, 0, 0.994876, 0, 0, 0, 0.994876, 0, 0.3, 0)
+collision_layer = 2
+script = ExtResource("2_ur2t3")
 
-[node name="Gatos" type="Sprite3D" groups=["Gatos"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.32, 0)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_hdkx4")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
+target_position = Vector3(0, 0, 0.25)
+
+[node name="GatosSprite" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.020218, 0)
 billboard = 2
 texture = ExtResource("1_nyvxt")
 hframes = 4
 vframes = 5
-script = ExtResource("2_ur2t3")
+script = ExtResource("4_itqqo")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="GatosSprite"]
+root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_unt86")
 }
-autoplay = "caminhar"
+autoplay = "catwalk"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("CapsuleShape3D_wwrww")
+[node name="MiauFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_8ku05")
+
+[node name="RonromFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_8ku05")

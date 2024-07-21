@@ -67,7 +67,7 @@ shape = SubResource("CapsuleShape3D_i1m5g")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
 target_position = Vector3(0, 0, -1000)
 collision_mask = 14
 
@@ -90,16 +90,20 @@ size_flags_vertical = 4
 
 [node name="Pov" type="Control" parent="UI jogador"]
 layout_mode = 3
-anchors_preset = 0
-offset_left = 644.0
-offset_top = 356.0
-offset_right = 1009.0
-offset_bottom = 647.0
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -365.0
+offset_top = -291.0
+grow_horizontal = 0
+grow_vertical = 0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="Mao" type="AnimatedSprite2D" parent="UI jogador/Pov"]
-position = Vector2(252, 36)
+position = Vector2(-105, 35)
 sprite_frames = SubResource("SpriteFrames_2xfnw")
 animation = &"ocioso"
 autoplay = "ocioso"

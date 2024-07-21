@@ -1,9 +1,10 @@
-CharacterBody3D
-Sprite3D
+RayCast3D
 AnimatedSprite3D
 CollisionShape3D
-Node
+CharacterBody3D
+Sprite3D
 AudioStreamPlayer
+Node
 Button
 Label
 Panel
@@ -11,4 +12,3 @@ Control
 ColorRect
 AnimatedSprite2D
 CanvasLayer
-RayCast3D

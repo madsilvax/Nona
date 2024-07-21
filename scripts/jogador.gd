@@ -6,17 +6,14 @@ extends CharacterBody3D
 @onready var arremeessarFX = $"Efeitos Sonoros/ArremessarFX"
 
 const SPEED = 2.0
-const MOUSE_SENSITIVITY = 0.2
+const MOUSE_SENSITIVITY = 0.1
 
 var pode_arremessar = true
 var derrotado = false
 
-# Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
-
 func _ready():
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	get_tree().call_group("Gatos", "set_camera", self)
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	mao.animation_finished.connect(arremessar_fim)
 	$"UI jogador/Derrota/Panel/Button".button_up.connect(restart)
 
@@ -28,22 +25,18 @@ func _input(event):
 		camera_3d.rotation_degrees.x -= event.relative.y * MOUSE_SENSITIVITY
 
 func _process(delta):
-	if Input.is_action_just_pressed("arremessar"):
-		arremessar()
 	if Input.is_action_just_pressed("sair"):
 		get_tree().quit()
 	if Input.is_action_just_pressed("reiniciar"):
 		restart()
+	if Input.is_action_just_pressed("arremessar"):
+		arremessar()
 	if derrotado:
 		return
 
 func _physics_process(delta):
-	# Add the gravity.
-	if not is_on_floor():
-		velocity.y -= gravity * delta
-
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
+	if derrotado:
+		return
 	var input_dir = Input.get_vector("move_esquerda", "move_direita", "move_frente", "move_tras")
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
@@ -70,7 +63,8 @@ func arremessar():
 func arremessar_fim():
 	pode_arremessar = true
 
-func distrair():
+func derrota():
+	pode_arremessar = false
 	derrotado = true
 	$"UI jogador/Derrota".show()
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE

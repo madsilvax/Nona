@@ -1,33 +1,33 @@
-extends Sprite3D
+extends CharacterBody3D
 
-@export var anim_col = 0
- 
-var camera = null
-func set_camera(c):
-	camera = c
- 
-func _process(delta):
-	if camera == null:
+@onready var jogador : CharacterBody3D = get_tree().get_first_node_in_group("Jogador")
+@onready var sprite = $AnimatedSprite3D
+@onready var raycast_3d = $RayCast3D
+
+@export var move_speed = 2.0
+
+var distraido = false
+
+func _physics_process(delta):
+	if distraido:
 		return
- 
-	var p_fwd = -camera.global_transform.basis.z
-	var fwd = global_transform.basis.z
-	var left = global_transform.basis.x
- 
-	var l_dot = left.dot(p_fwd)
-	var f_dot = fwd.dot(p_fwd)
-	var row = 0
-	flip_h = false
-	if f_dot < -0.85:
-		row = 0 # front sprite
-	elif f_dot > 0.85:
-		row = 4 # back sprite
-	else:
-		flip_h = l_dot > 0
-		if abs(f_dot) < 0.3:
-			row = 2 # left sprite
-		elif f_dot < 0:
-			row = 1 # forward left sprite
-		else:
-			row = 3 # back left sprite
-	frame = anim_col + row * 4
+	if jogador == null:
+		return
+	
+	var direcao = jogador.global_position - global_position
+	direcao.y = 0.0
+	direcao = direcao.normalized()
+	
+	velocity = direcao * move_speed
+	move_and_slide()
+	atingir_jogador()
+
+func atingir_jogador():
+	if raycast_3d.is_colliding() and raycast_3d.get_collider().has_method("derrota"):
+		raycast_3d.get_collider().derrota()
+
+func distrair():
+	$RonromFX.play()
+	#sprite.play("catronrom")
+	$CollisionShape3D.set_process(false)
+	distraido = true
