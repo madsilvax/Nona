@@ -52,8 +52,16 @@ mesh = SubResource("CylinderMesh_wprga")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ambiente/MeshInstance3D/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_oiqt1")
 
-[node name="Gatos" parent="." instance=ExtResource("3_tsgw8")]
+[node name="Gatos" type="Node3D" parent="."]
+
+[node name="Gatos" parent="Gatos" instance=ExtResource("3_tsgw8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.332893, -18.6583)
+
+[node name="Gatos2" parent="Gatos" instance=ExtResource("3_tsgw8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.93451, 0.332893, -18.6583)
+
+[node name="Gatos3" parent="Gatos" instance=ExtResource("3_tsgw8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.69296, 0.332893, -18.6583)
 
 [node name="Jogador" parent="." instance=ExtResource("3_xa5n1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)

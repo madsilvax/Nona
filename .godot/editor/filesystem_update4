@@ -1,6 +1,3 @@
 res://scenes/mundo.tscn
-res://scripts/gatos.gd
 res://scenes/jogador.tscn
 res://scenes/gatos.tscn
-res://scripts/jogador.gd
-res://scripts/mundo.gd
