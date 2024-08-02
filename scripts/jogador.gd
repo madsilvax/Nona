@@ -2,7 +2,9 @@ extends CharacterBody3D
 
 @onready var camera_3d = $Camera3D
 @onready var raycast_3d = $RayCast3D
-@onready var mao = $"UI jogador/Pov/Mao"
+@onready var mao = $"UI jogador/MarginContainer/Pov/Mao"
+@onready var menu = $"UI jogador/MarginContainer/Menu"
+@onready var retomar_btn = $"UI jogador/MarginContainer/Menu/VBoxContainer/retomar_btn"
 @onready var arremeessarFX = $"Efeitos Sonoros/ArremessarFX"
 
 const SPEED = 2.0
@@ -15,7 +17,14 @@ func _ready():
 	get_tree().call_group("Gatos", "set_camera", self)
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	mao.animation_finished.connect(arremessar_fim)
-	$"UI jogador/Derrota/Panel/Button".button_up.connect(restart)
+	menu.visible = false
+	$"UI jogador/MarginContainer/Derrota/Panel/Button".button_up.connect(restart)
+
+func _process(delta):
+	if Input.is_action_just_pressed("arremessar"):
+		arremessar()
+	if derrotado:
+		return
 
 func _input(event):
 	if derrotado:
@@ -24,15 +33,12 @@ func _input(event):
 		rotation_degrees.y -= event.relative.x * MOUSE_SENSITIVITY
 		camera_3d.rotation_degrees.x -= event.relative.y * MOUSE_SENSITIVITY
 
-func _process(delta):
-	if Input.is_action_just_pressed("sair"):
-		get_tree().quit()
-	if Input.is_action_just_pressed("reiniciar"):
-		restart()
-	if Input.is_action_just_pressed("arremessar"):
-		arremessar()
-	if derrotado:
-		return
+func _unhandled_input(event):
+	if event.is_action_pressed("menu"):
+		get_tree().paused = true
+		menu.visible = true
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		retomar_btn.grab_focus()
 
 func _physics_process(delta):
 	if derrotado:
@@ -48,9 +54,6 @@ func _physics_process(delta):
 
 	move_and_slide()
 
-func restart():
-	get_tree().reload_current_scene()
-
 func arremessar():
 	if !pode_arremessar:
 		return
@@ -64,7 +67,29 @@ func arremessar_fim():
 	pode_arremessar = true
 
 func derrota():
-	pode_arremessar = false
+	get_tree().paused = true
 	derrotado = true
-	$"UI jogador/Derrota".show()
+	$"UI jogador/MarginContainer/Derrota".show()
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+
+func _on_retomar_btn_pressed():
+	get_tree().paused = false
+	menu.visible = false
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
+func _on_reiniciar_btn_pressed():
+	restart()
+
+func _on_configurações_btn_pressed():
+	pass # Replace with function body.
+
+func _on_menu_inicial_btn_pressed():
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://scenes/menu_inicial.tscn")
+
+func _on_sair_btn_pressed():
+	get_tree().quit()
+
+func restart():
+	get_tree().paused = false
+	get_tree().reload_current_scene()

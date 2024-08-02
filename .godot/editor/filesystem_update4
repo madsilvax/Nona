@@ -1,3 +1,8 @@
+res://scenes/menu_inicial.tscn
 res://scenes/mundo.tscn
 res://scenes/jogador.tscn
 res://scenes/gatos.tscn
+res://scripts/menu_inicial.gd
+res://scenes/menu_pausa.tscn
+res://scripts/menu_pausa.gd
+res://scripts/jogador.gd
