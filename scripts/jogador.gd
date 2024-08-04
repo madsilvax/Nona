@@ -1,7 +1,8 @@
 extends CharacterBody3D
 
+@onready var gatos : CharacterBody3D = get_tree().get_first_node_in_group("Gatos")
 @onready var camera_3d = $Camera3D
-@onready var raycast_3d = $RayCast3D
+@onready var raycast_3d = $Camera3D/RayCast3D
 @onready var mao = $"UI jogador/MarginContainer/Pov/Mao"
 @onready var menu = $"UI jogador/MarginContainer/Menu"
 @onready var retomar_btn = $"UI jogador/MarginContainer/Menu/VBoxContainer/retomar_btn"
@@ -10,6 +11,7 @@ extends CharacterBody3D
 const SPEED = 2.0
 const MOUSE_SENSITIVITY = 0.1
 
+var municao = 99
 var pode_arremessar = true
 var derrotado = false
 
@@ -26,6 +28,20 @@ func _process(delta):
 	if derrotado:
 		return
 
+func _physics_process(delta):
+	if derrotado:
+		return
+	var input_dir = Input.get_vector("move_esquerda", "move_direita", "move_frente", "move_tras")
+	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	if direction:
+		velocity.x = direction.x * SPEED
+		velocity.z = direction.z * SPEED
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.z = move_toward(velocity.z, 0, SPEED)
+		
+	move_and_slide()
+
 func _input(event):
 	if derrotado:
 		return
@@ -40,31 +56,24 @@ func _unhandled_input(event):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		retomar_btn.grab_focus()
 
-func _physics_process(delta):
-	if derrotado:
-		return
-	var input_dir = Input.get_vector("move_esquerda", "move_direita", "move_frente", "move_tras")
-	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
-
-	move_and_slide()
-
 func arremessar():
+	if municao == 0:
+		pode_arremessar = false
 	if !pode_arremessar:
 		return
 	pode_arremessar = false
 	mao.play("arremessar")
 	arremeessarFX.play()
-	if raycast_3d.is_colliding() and raycast_3d.get_collider().has_method("distrair"):
+	if raycast_3d.is_colliding() and gatos.has_method("distrair"):
 		raycast_3d.get_collider().distrair()
+	municao -= 1
 
 func arremessar_fim():
 	pode_arremessar = true
+
+func restart():
+	get_tree().paused = false
+	get_tree().reload_current_scene()
 
 func derrota():
 	get_tree().paused = true
@@ -89,7 +98,3 @@ func _on_menu_inicial_btn_pressed():
 
 func _on_sair_btn_pressed():
 	get_tree().quit()
-
-func restart():
-	get_tree().paused = false
-	get_tree().reload_current_scene()

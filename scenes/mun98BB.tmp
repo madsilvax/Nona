@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b8tkea33a0xir"]
+[gd_scene load_steps=11 format=3 uid="uid://b8tkea33a0xir"]
 
 [ext_resource type="Script" path="res://scripts/mundo.gd" id="1_xq2bv"]
 [ext_resource type="PackedScene" uid="uid://dnblctmdegat2" path="res://scenes/gatos.tscn" id="3_tsgw8"]
@@ -7,6 +7,10 @@
 [sub_resource type="Environment" id="Environment_gwip2"]
 background_mode = 1
 background_color = Color(0.560784, 0.835294, 0.937255, 1)
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_2j5iy"]
+vertices = PackedVector3Array(-49.5, 0.5, 0, -3, 0.5, 0, -3, 0.5, -0.75, -49.5, 0.5, 0, -3, 0.5, -0.75, -2, 0.5, -1, -2, 0.5, -49.5, -49.5, 0.5, -49.5, -2, 0.5, -49.5, -2, 0.5, -1, -1.25, 0.5, -1, -2, 0.5, -49.5, -1.25, 0.5, -1, -0.75, 0.5, 0, 49.5, 0.5, 0, 49.5, 0.5, -49.5, -3, 0.5, 0.75, -3, 0.5, 0, -49.5, 0.5, 0, -2, 0.5, 1, -3, 0.5, 0.75, -49.5, 0.5, 0, -49.5, 0.5, 49.5, -2, 0.5, 49.5, -1.25, 0.5, 1, -2, 0.5, 1, -2, 0.5, 49.5, -0.75, 0.5, 0, -1.25, 0.5, 1, -2, 0.5, 49.5, 49.5, 0.5, 49.5, 49.5, 0.5, 0)
+polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(4, 3, 5), PackedInt32Array(5, 3, 6), PackedInt32Array(6, 3, 7), PackedInt32Array(10, 9, 8), PackedInt32Array(12, 11, 13), PackedInt32Array(13, 11, 14), PackedInt32Array(14, 11, 15), PackedInt32Array(18, 17, 16), PackedInt32Array(20, 19, 21), PackedInt32Array(21, 19, 23), PackedInt32Array(21, 23, 22), PackedInt32Array(26, 25, 24), PackedInt32Array(28, 27, 29), PackedInt32Array(29, 27, 31), PackedInt32Array(29, 31, 30)]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nvqkx"]
 albedo_color = Color(0.788235, 0.478431, 0.180392, 1)
@@ -32,37 +36,39 @@ environment = SubResource("Environment_gwip2")
 transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 5, 6.04594)
 shadow_enabled = true
 
-[node name="Ambiente" type="Node3D" parent="."]
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000890255, 0.032896, -0.00793839)
+navigation_mesh = SubResource("NavigationMesh_2j5iy")
 
-[node name="Piso" type="MeshInstance3D" parent="Ambiente"]
+[node name="Ambiente" type="Node3D" parent="NavigationRegion3D"]
+
+[node name="Piso" type="MeshInstance3D" parent="NavigationRegion3D/Ambiente"]
 material_override = SubResource("StandardMaterial3D_nvqkx")
 mesh = SubResource("PlaneMesh_bq76j")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Ambiente/Piso"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Ambiente/Piso"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ambiente/Piso/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Ambiente/Piso/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_j7xr1")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Ambiente"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Ambiente"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, 0)
 mesh = SubResource("CylinderMesh_wprga")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Ambiente/MeshInstance3D"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Ambiente/MeshInstance3D"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ambiente/MeshInstance3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Ambiente/MeshInstance3D/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_oiqt1")
 
-[node name="Gatos" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000890255, 0.032896, -0.00793839)
+[node name="Gatos" type="Node3D" parent="NavigationRegion3D"]
 
-[node name="Gatos" parent="Gatos" instance=ExtResource("3_tsgw8")]
+[node name="Gatos" parent="NavigationRegion3D/Gatos" instance=ExtResource("3_tsgw8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.332893, -5.6583)
 
-[node name="Gatos2" parent="Gatos" instance=ExtResource("3_tsgw8")]
+[node name="Gatos2" parent="NavigationRegion3D/Gatos" instance=ExtResource("3_tsgw8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.93451, 0.332893, -9.6583)
 
-[node name="Gatos3" parent="Gatos" instance=ExtResource("3_tsgw8")]
+[node name="Gatos3" parent="NavigationRegion3D/Gatos" instance=ExtResource("3_tsgw8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.69296, 0.332893, -4.6583)
 
 [node name="Jogador" parent="." instance=ExtResource("3_xa5n1")]

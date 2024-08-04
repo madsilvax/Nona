@@ -1,3 +1,10 @@
+CollisionShape3D
+Area3D
+RayCast3D
+Node3D
+NavigationAgent3D
+NavigationRegion3D
+Area2D
 MarginContainer
 Control
 CanvasLayer
@@ -5,10 +12,3 @@ Button
 ColorRect
 HSeparator
 VBoxContainer
-AnimationPlayer
-VSeparator
-TextureRect
-HBoxContainer
-MenuButton
-Node3D
-RayCast3D

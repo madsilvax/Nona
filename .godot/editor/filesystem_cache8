@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1722547858
+::res://::1722787046
 export_presets.cfg::TextFile::-1::1722393692::0::1::::<><>::
 icon.svg::CompressedTexture2D::5779374250829346702::1721087068::1721087084::1::::<><>::
 ::res://assets/::1722548576
@@ -11,17 +11,18 @@ gun_sprites.png::CompressedTexture2D::7998786370512062311::1721504074::172150415
 monster_die.wav::AudioStreamWAV::4027695554536056871::1721504074::1721504151::1::::<><>::
 monster_sprites.png::CompressedTexture2D::7900365981603872748::1721504074::1721526428::1::::<><>::
 revolver_shot1.wav::AudioStreamWAV::36766338799730801::1721504075::1721504151::1::::<><>::
-::res://assets/UI Menu/::1722549574
+::res://assets/UI Menu/::1722549578
 Granny.jpg::CompressedTexture2D::7855585137410173865::1722549243::1722549245::1::::<><>::
 GrannysHouse.jpg::CompressedTexture2D::397152403311465595::1722548514::1722548608::1::::<><>::
 LogoBabyLooneyTunes.png::CompressedTexture2D::4121197072034575416::1722549575::1722549578::1::::<><>::
-::res://scenes/::1722549478
-gatos.tscn::PackedScene::8074453871259218673::1722392316::0::1::::<><>::uid://2fdym0b0omh5::::res://assets/sprite monstro.png<>res://scripts/gatos.gd<>uid://bpwt0jb1u71x4::::res://assets/monster_die.wav<>res://scripts/gatossprite.gd
-jogador.tscn::PackedScene::8636844246838022910::1722392316::0::1::::<><>::res://scripts/jogador.gd<>uid://dl7w3wm0uig20::::res://assets/UI jogador/gun_sprites.png<>uid://dltkq7btx2bx1::::res://assets/revolver_shot1.wav
-mundo.tscn::PackedScene::4742490058706314693::1722392315::0::1::::<><>::res://scripts/mundo.gd<>uid://dnblctmdegat2::::res://scenes/gatos.tscn<>uid://dvb0texx0hvra::::res://scenes/jogador.tscn
-menu_inicial.tscn::PackedScene::724415294462023657::1722549478::0::1::::<><>::uid://fwnbovboeunr::::res://assets/UI Menu/GrannysHouse.jpg<>uid://dj6klspvegl6p::::res://assets/UI Menu/Granny.jpg
-::res://scripts/::1721573552
+::res://scenes/::1722560536
+gatos.tscn::PackedScene::8074453871259218673::1722557902::0::1::::<><>::uid://2fdym0b0omh5::::res://assets/sprite monstro.png<>res://scripts/gatos.gd<>uid://bpwt0jb1u71x4::::res://assets/monster_die.wav<>res://scripts/gatossprite.gd
+jogador.tscn::PackedScene::8636844246838022910::1722560536::0::1::::<><>::res://scripts/jogador.gd<>uid://dl7w3wm0uig20::::res://assets/UI jogador/gun_sprites.png<>uid://dltkq7btx2bx1::::res://assets/revolver_shot1.wav
+menu_inicial.tscn::PackedScene::724415294462023657::1722560536::0::1::::<><>::res://scripts/menu_inicial.gd<>uid://fwnbovboeunr::::res://assets/UI Menu/GrannysHouse.jpg<>uid://byylrp17861ce::::res://assets/UI Menu/LogoBabyLooneyTunes.png
+mundo.tscn::PackedScene::4742490058706314693::1722560536::0::1::::<><>::res://scripts/mundo.gd<>uid://dnblctmdegat2::::res://scenes/gatos.tscn<>uid://dvb0texx0hvra::::res://scenes/jogador.tscn
+::res://scripts/::1722559923
 gatos.gd::GDScript::-1::1721573552::0::1::::<>CharacterBody3D<>::
 gatossprite.gd::GDScript::-1::1721525985::0::1::::<>Sprite3D<>::
-jogador.gd::GDScript::-1::1721572904::0::1::::<>CharacterBody3D<>::
+jogador.gd::GDScript::-1::1722559867::0::1::::<>CharacterBody3D<>::
+menu_inicial.gd::GDScript::-1::1722558120::0::1::::<>Control<>::
 mundo.gd::GDScript::-1::1721571670::0::1::::<>Node3D<>::

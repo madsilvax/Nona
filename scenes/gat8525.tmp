@@ -45,11 +45,10 @@ script = ExtResource("2_ur2t3")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_hdkx4")
 
-[node name="Alcance de ataque" type="Area3D" parent="."]
+[node name="Area3D" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
-collision_layer = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Alcance de ataque"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("CylinderShape3D_1pc1x")
 
 [node name="GatosSprite" type="Sprite3D" parent="."]
@@ -73,4 +72,4 @@ stream = ExtResource("3_8ku05")
 [node name="RonromFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_8ku05")
 
-[connection signal="body_entered" from="Alcance de ataque" to="." method="_on_alcance_de_ataque_body_entered"]
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
