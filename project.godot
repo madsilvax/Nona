@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Projeto Integrado III"
+config/name="Nona"
 run/main_scene="res://scenes/menu_inicial.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
