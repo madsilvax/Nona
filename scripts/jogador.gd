@@ -9,8 +9,9 @@ extends CharacterBody3D
 @onready var arremeessarFX = $"Efeitos Sonoros/ArremessarFX"
 
 const SPEED = 2.0
-const MOUSE_SENSITIVITY = 0.1
+const MOUSE_SENSITIVITY = 0.03
 
+var gravidade = ProjectSettings.get_setting("physics/3d/default_gravity")
 var municao = 99
 var pode_arremessar = true
 var derrotado = false
@@ -31,6 +32,12 @@ func _process(delta):
 func _physics_process(delta):
 	if derrotado:
 		return
+	
+	if not is_on_floor():
+		velocity.y -= gravidade * delta
+
+	if Input.is_action_just_pressed("pular") and is_on_floor():
+		velocity.y = SPEED
 	var input_dir = Input.get_vector("move_esquerda", "move_direita", "move_frente", "move_tras")
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
@@ -80,6 +87,9 @@ func derrota():
 	derrotado = true
 	$"UI jogador/MarginContainer/Derrota".show()
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+
+func vitoria():
+	pass
 
 func _on_retomar_btn_pressed():
 	get_tree().paused = false

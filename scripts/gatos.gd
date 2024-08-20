@@ -31,5 +31,5 @@ func distrair():
 	distraido = true
 	
 func _on_alcance_de_ataque_body_entered(jogador):
-	if jogador.has_method("derrota"):
+	if distraido == false and jogador.has_method("derrota"):
 		jogador.derrota()

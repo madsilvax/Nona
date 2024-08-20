@@ -1,4 +1,5 @@
-res://scenes/jogador.tscn
-res://scenes/gatos.tscn
 res://scenes/mundo.tscn
 res://scenes/menu_inicial.tscn
+res://scenes/jogador.tscn
+res://scenes/gatos.tscn
+res://scripts/menu_inicial.gd
