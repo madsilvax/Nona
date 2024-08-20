@@ -4,6 +4,7 @@ extends CharacterBody3D
 @onready var camera_3d = $Camera3D
 @onready var raycast_3d = $Camera3D/RayCast3D
 @onready var mao = $"UI jogador/MarginContainer/Pov/Mao"
+@onready var novelos_label = $"UI jogador/MarginContainer/Pov/Novelos"
 @onready var menu = $"UI jogador/MarginContainer/Menu"
 @onready var retomar_btn = $"UI jogador/MarginContainer/Menu/VBoxContainer/retomar_btn"
 @onready var arremeessarFX = $"Efeitos Sonoros/ArremessarFX"
@@ -12,11 +13,12 @@ const SPEED = 2.0
 const MOUSE_SENSITIVITY = 0.03
 
 var gravidade = ProjectSettings.get_setting("physics/3d/default_gravity")
-var municao = 99
+var municao = 10
 var pode_arremessar = true
 var derrotado = false
 
 func _ready():
+	novelos(municao)
 	get_tree().call_group("Gatos", "set_camera", self)
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	mao.animation_finished.connect(arremessar_fim)
@@ -74,9 +76,17 @@ func arremessar():
 	if raycast_3d.is_colliding() and gatos.has_method("distrair"):
 		raycast_3d.get_collider().distrair()
 	municao -= 1
+	novelos(municao)
 
 func arremessar_fim():
 	pode_arremessar = true
+
+func novelos(municao: int):
+	novelos_label.text = "%d" %municao
+
+func coletar_novelos():
+	municao += 1
+	novelos(municao)
 
 func restart():
 	get_tree().paused = false
@@ -100,7 +110,7 @@ func _on_reiniciar_btn_pressed():
 	restart()
 
 func _on_configurações_btn_pressed():
-	pass # Replace with function body.
+	pass
 
 func _on_menu_inicial_btn_pressed():
 	get_tree().paused = false

@@ -1,5 +1,10 @@
-res://scenes/mundo.tscn
 res://scenes/menu_inicial.tscn
+res://scenes/mundo.tscn
 res://scenes/jogador.tscn
 res://scenes/gatos.tscn
-res://scripts/menu_inicial.gd
+res://scenes/novelos.tscn
+res://scripts/novelos.gd
+res://scripts/mundo.gd
+res://scripts/gatossprite.gd
+res://scripts/gatos.gd
+res://scripts/jogador.gd

@@ -1,7 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://dvb0texx0hvra"]
+[gd_scene load_steps=17 format=3 uid="uid://dvb0texx0hvra"]
 
 [ext_resource type="Script" path="res://scripts/jogador.gd" id="1_nj6ir"]
+[ext_resource type="Texture2D" uid="uid://7jvj37umbrny" path="res://assets/UI jogador/interface.png" id="2_kwepg"]
 [ext_resource type="Texture2D" uid="uid://dl7w3wm0uig20" path="res://assets/UI jogador/gun_sprites.png" id="2_xnqla"]
+[ext_resource type="FontFile" uid="uid://bus25rs5meaoj" path="res://assets/JustAnotherHand-Regular.ttf" id="3_boigo"]
 [ext_resource type="AudioStream" uid="uid://dltkq7btx2bx1" path="res://assets/revolver_shot1.wav" id="3_nhvua"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_i1m5g"]
@@ -93,21 +95,30 @@ grow_vertical = 2
 [node name="Pov" type="Control" parent="UI jogador/MarginContainer"]
 layout_mode = 2
 
-[node name="mira" type="ColorRect" parent="UI jogador/MarginContainer/Pov"]
+[node name="TextureRect" type="TextureRect" parent="UI jogador/MarginContainer/Pov"]
+layout_mode = 2
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_kwepg")
+
+[node name="Novelos" type="Label" parent="UI jogador/MarginContainer/Pov"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -2.0
-offset_top = -2.0
-offset_right = 2.0
-offset_bottom = 2.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -194.0
+offset_top = -147.0
+offset_right = -143.0
+offset_bottom = -96.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_boigo")
+theme_override_font_sizes/font_size = 50
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Mao" type="AnimatedSprite2D" parent="UI jogador/MarginContainer/Pov"]
 position = Vector2(1440, 824)

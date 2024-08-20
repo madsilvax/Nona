@@ -8,7 +8,7 @@ func _ready():
 func _process(delta):
 	pass
 
-func _on_fim_body_entered(jogador):
-	if jogador.has_method("vitoria"):
+func _on_fim_body_entered(body):
+	if body.name == "Jogador":
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		get_tree().change_scene_to_file("res://scenes/fim.tscn")

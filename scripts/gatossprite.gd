@@ -3,6 +3,7 @@ extends Sprite3D
 @export var anim_col = 0
  
 var camera = null
+
 func set_camera(c):
 	camera = c
  
@@ -30,4 +31,4 @@ func _process(delta):
 			row = 1 # forward left sprite
 		else:
 			row = 3 # back left sprite
-	frame = anim_col + row * 4
+	frame = anim_col + row * 7
