@@ -1,0 +1,267 @@
+[gd_scene load_steps=17 format=3 uid="uid://dvb0texx0hvra"]
+
+[ext_resource type="Script" path="res://build/scripts/jogador.gd" id="1_nj6ir"]
+[ext_resource type="Texture2D" uid="uid://7jvj37umbrny" path="res://build/assets/UI jogador/interface.png" id="2_kwepg"]
+[ext_resource type="Texture2D" uid="uid://dl7w3wm0uig20" path="res://build/assets/UI jogador/gun_sprites.png" id="2_xnqla"]
+[ext_resource type="FontFile" uid="uid://bus25rs5meaoj" path="res://build/assets/JustAnotherHand-Regular.ttf" id="3_boigo"]
+[ext_resource type="AudioStream" uid="uid://dltkq7btx2bx1" path="res://build/assets/revolver_shot1.wav" id="3_nhvua"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_i1m5g"]
+height = 1.6
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ixea1"]
+atlas = ExtResource("2_xnqla")
+region = Rect2(512, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_07nfm"]
+atlas = ExtResource("2_xnqla")
+region = Rect2(1024, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kskar"]
+atlas = ExtResource("2_xnqla")
+region = Rect2(1536, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ktrmg"]
+atlas = ExtResource("2_xnqla")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_otax2"]
+atlas = ExtResource("2_xnqla")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2xfnw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ixea1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_07nfm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kskar")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ktrmg")
+}],
+"loop": false,
+"name": &"arremessar",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_otax2")
+}],
+"loop": false,
+"name": &"ocioso",
+"speed": 5.0
+}]
+
+[sub_resource type="InputEventAction" id="InputEventAction_o4co5"]
+action = &"menu"
+
+[sub_resource type="Shortcut" id="Shortcut_mwpps"]
+events = [SubResource("InputEventAction_o4co5")]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q7tko"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l1xg3"]
+
+[node name="Jogador" type="CharacterBody3D" groups=["Jogador"]]
+collision_mask = 15
+script = ExtResource("1_nj6ir")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("CapsuleShape3D_i1m5g")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
+
+[node name="RayCast3D" type="RayCast3D" parent="Camera3D"]
+target_position = Vector3(0, 0, -10)
+collision_mask = 14
+
+[node name="UI jogador" type="CanvasLayer" parent="."]
+process_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="UI jogador"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Pov" type="Control" parent="UI jogador/MarginContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="UI jogador/MarginContainer/Pov"]
+layout_mode = 2
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_kwepg")
+
+[node name="Interagir" type="Label" parent="UI jogador/MarginContainer/Pov"]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -164.0
+offset_top = -24.5
+offset_right = -57.0
+offset_bottom = 24.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "Pressione \"E\"
+para interagir"
+
+[node name="Novelos" type="Label" parent="UI jogador/MarginContainer/Pov"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -194.0
+offset_top = -147.0
+offset_right = -143.0
+offset_bottom = -96.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_boigo")
+theme_override_font_sizes/font_size = 50
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Mao" type="AnimatedSprite2D" parent="UI jogador/MarginContainer/Pov"]
+position = Vector2(1440, 824)
+sprite_frames = SubResource("SpriteFrames_2xfnw")
+animation = &"ocioso"
+autoplay = "ocioso"
+
+[node name="Menu" type="Control" parent="UI jogador/MarginContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Fundo" type="ColorRect" parent="UI jogador/MarginContainer/Menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.25098)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI jogador/MarginContainer/Menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -58.5
+offset_top = -101.5
+offset_right = 58.5
+offset_bottom = 101.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="retomar_btn" type="Button" parent="UI jogador/MarginContainer/Menu/VBoxContainer"]
+layout_mode = 2
+shortcut = SubResource("Shortcut_mwpps")
+text = "retomar"
+
+[node name="HSeparator" type="HSeparator" parent="UI jogador/MarginContainer/Menu/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_q7tko")
+
+[node name="reiniciar_btn" type="Button" parent="UI jogador/MarginContainer/Menu/VBoxContainer"]
+layout_mode = 2
+text = "reiniciar"
+
+[node name="HSeparator2" type="HSeparator" parent="UI jogador/MarginContainer/Menu/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_l1xg3")
+
+[node name="configurações_btn" type="Button" parent="UI jogador/MarginContainer/Menu/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "configurações"
+
+[node name="HSeparator3" type="HSeparator" parent="UI jogador/MarginContainer/Menu/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_q7tko")
+
+[node name="menu inicial_btn" type="Button" parent="UI jogador/MarginContainer/Menu/VBoxContainer"]
+layout_mode = 2
+text = "menu inicial"
+
+[node name="HSeparator4" type="HSeparator" parent="UI jogador/MarginContainer/Menu/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_q7tko")
+
+[node name="sair_btn" type="Button" parent="UI jogador/MarginContainer/Menu/VBoxContainer"]
+layout_mode = 2
+text = "sair"
+
+[node name="Derrota" type="Control" parent="UI jogador/MarginContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="UI jogador/MarginContainer/Derrota"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -125.0
+offset_right = 125.0
+offset_bottom = 125.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="UI jogador/MarginContainer/Derrota/Panel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 63.0
+offset_bottom = 86.0
+grow_horizontal = 2
+text = "PERDEU!"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="UI jogador/MarginContainer/Derrota/Panel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = 44.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Tentar novamente"
+
+[node name="Vitoria" type="Control" parent="UI jogador/MarginContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Efeitos Sonoros" type="Node" parent="."]
+
+[node name="ArremessarFX" type="AudioStreamPlayer" parent="Efeitos Sonoros"]
+stream = ExtResource("3_nhvua")
+
+[connection signal="pressed" from="UI jogador/MarginContainer/Menu/VBoxContainer/retomar_btn" to="." method="_on_retomar_btn_pressed"]
+[connection signal="pressed" from="UI jogador/MarginContainer/Menu/VBoxContainer/reiniciar_btn" to="." method="_on_reiniciar_btn_pressed"]
+[connection signal="pressed" from="UI jogador/MarginContainer/Menu/VBoxContainer/configurações_btn" to="." method="_on_configurações_btn_pressed"]
+[connection signal="pressed" from="UI jogador/MarginContainer/Menu/VBoxContainer/menu inicial_btn" to="." method="_on_menu_inicial_btn_pressed"]
+[connection signal="pressed" from="UI jogador/MarginContainer/Menu/VBoxContainer/sair_btn" to="." method="_on_sair_btn_pressed"]

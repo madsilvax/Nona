@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bxnbs7jjrhuff"
+path="res://.godot/imported/monster_die.wav-74611a4a67f4bde1c8e21e9be7bd0c1c.sample"
+
+[deps]
+
+source_file="res://build/assets/UI jogador/monster_die.wav"
+dest_files=["res://.godot/imported/monster_die.wav-74611a4a67f4bde1c8e21e9be7bd0c1c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

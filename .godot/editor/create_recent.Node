@@ -1,6 +1,6 @@
 Label
-TextureRect
 Node3D
+TextureRect
 CollisionShape3D
 Area3D
 VideoStreamPlayer

@@ -1,3 +1,7 @@
-res://scenes/gatos.tscn::4b32dbb20f86418b29471a0066cbe4ed::1722392316::res://.godot/exported/133200997/export-75599e2da37f04445408959d21d61457-gatos.scn
-res://scenes/jogador.tscn::58cf2d3cf907a899e144bbdccb9f75cd::1722392316::res://.godot/exported/133200997/export-ccae547158b595b82458257c3f92cafe-jogador.scn
-res://scenes/mundo.tscn::d2614dc25e0908e995c2426e78167d38::1722392315::res://.godot/exported/133200997/export-c14f4517b82747d6b48781d7787c4c8c-mundo.scn
+res://build/scenes/fim.tscn::c6307efc297521906537ca4aa2322933::1724259579::res://.godot/exported/133200997/export-95e9ca9adda28335a044c9f6607c9404-fim.scn
+res://build/scenes/gatos.tscn::61796ba6f713cb9e5b91ab19554ab863::1724259579::res://.godot/exported/133200997/export-b1f8ee05b054931edc53ff83dd0e98ac-gatos.scn
+res://build/scenes/jogador.tscn::5c06c770ad8b653b020541ac1d02dd48::1724259852::res://.godot/exported/133200997/export-8d46a5665f260895995a930004f6d891-jogador.scn
+res://build/scenes/menu_inicial.tscn::8d322b1d462dc76273149e4dd7ace246::1724259579::res://.godot/exported/133200997/export-827cf89f145967f0290436d1d518fd72-menu_inicial.scn
+res://build/scenes/mundo.tscn::2866c4d579e9ddb0a75e77f9714e1fe3::1724259580::res://.godot/exported/133200997/export-a98320fdb12dc15d6d8166df9d449a4f-mundo.scn
+res://build/scenes/novelos.tscn::44a6b6c959f36d0995607e9b88f73672::1724259579::res://.godot/exported/133200997/export-2eb1ebb220026bb7b5fd7c6cfbb1fde0-novelos.scn
+res://build/scenes/portas.tscn::2a53c8bbb96e2defaaf4f89de216e04c::1724259579::res://.godot/exported/133200997/export-e1211d6483d8edee5ae20125392251a4-portas.scn

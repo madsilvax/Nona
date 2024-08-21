@@ -1,0 +1,98 @@
+[gd_scene load_steps=7 format=3 uid="uid://kk6aqiw0ibvl"]
+
+[ext_resource type="Script" path="res://build/scripts/menu_inicial.gd" id="1_3mkf8"]
+[ext_resource type="Texture2D" uid="uid://dhyp62kfxawv6" path="res://build/assets/UI Menu/Background.jpeg" id="2_0qmgu"]
+[ext_resource type="Texture2D" uid="uid://byylrp17861ce" path="res://build/assets/UI Menu/LogoBabyLooneyTunes.png" id="2_o13p1"]
+[ext_resource type="VideoStream" path="res://build/assets/UI Menu/NONA MENU_ogv.ogv" id="4_urxlt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dvr2w"]
+
+[sub_resource type="Theme" id="Theme_won55"]
+
+[node name="Menu Inicial" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3mkf8")
+
+[node name="Fundo" type="TextureRect" parent="."]
+visible = false
+layout_mode = 2
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_0qmgu")
+expand_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_o13p1")
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_dvr2w")
+
+[node name="iniciar_btn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_won55")
+text = "iniciar"
+
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_dvr2w")
+
+[node name="créditos_btn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "créditos"
+
+[node name="HSeparator3" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_dvr2w")
+
+[node name="configurações_btn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "configurações"
+
+[node name="HSeparator4" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_dvr2w")
+
+[node name="sair_btn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "sair"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 2
+offset_right = 1920.0
+offset_bottom = 1080.0
+stream = ExtResource("4_urxlt")
+autoplay = true
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/iniciar_btn" to="." method="_on_iniciar_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/créditos_btn" to="." method="_on_créditos_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/configurações_btn" to="." method="_on_configurações_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/sair_btn" to="." method="_on_sair_btn_pressed"]
