@@ -1,6 +1,6 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1724260522
-export_presets.cfg::TextFile::-1::1724260413::0::1::::<><>::
+::res://::1724340849
+export_presets.cfg::TextFile::-1::1724260595::0::1::::<><>::
 icon.svg::CompressedTexture2D::5779374250829346702::1721087068::1721087084::1::::<><>::
 ::res://build/::1724259170
 ::res://build/assets/::1724259225
@@ -25,12 +25,12 @@ LogoBabyLooneyTunes.png::CompressedTexture2D::4121197072034575416::1722549575::1
 NONA MENU_ogv.ogv::VideoStreamTheora::-1::1724115872::0::1::::<><>::
 ::res://build/assets/Áudio/::1724259224
 porta.ogg::AudioStreamOggVorbis::8180977845612766175::1617503018::1724259224::1::::<><>::
-::res://build/scenes/::1724260436
+::res://build/scenes/::1724260600
 fim.tscn::PackedScene::9114792056746893338::1724259579::0::1::::<><>::res://build/scripts/fim.gd<>uid://dhyp62kfxawv6::::res://build/assets/UI Menu/Background.jpeg
 gatos.tscn::PackedScene::8074453871259218673::1724259579::0::1::::<><>::uid://8qqogjya6m57::::res://build/assets/Sprites/gato.png<>res://build/scripts/gatos.gd<>uid://bpwt0jb1u71x4::::res://build/assets/monster_die.wav<>res://build/scripts/gatossprite.gd
 jogador.tscn::PackedScene::8636844246838022910::1724259876::0::1::::<><>::res://build/scripts/jogador.gd<>uid://7jvj37umbrny::::res://build/assets/UI jogador/interface.png<>uid://dl7w3wm0uig20::::res://build/assets/UI jogador/gun_sprites.png<>uid://bus25rs5meaoj::::res://build/assets/JustAnotherHand-Regular.ttf<>uid://dltkq7btx2bx1::::res://build/assets/revolver_shot1.wav
 menu_inicial.tscn::PackedScene::724415294462023657::1724260010::0::1::::<><>::res://build/scripts/menu_inicial.gd<>uid://dhyp62kfxawv6::::res://build/assets/UI Menu/Background.jpeg<>uid://byylrp17861ce::::res://build/assets/UI Menu/LogoBabyLooneyTunes.png<>res://build/assets/UI Menu/NONA MENU_ogv.ogv
-mundo.tscn::PackedScene::4742490058706314693::1724260436::0::1::::<><>::res://build/scripts/mundo.gd<>uid://b00d6igdeey71::::res://build/scenes/portas.tscn<>uid://jlvs6btlksbi::::res://build/scenes/novelos.tscn<>uid://dnblctmdegat2::::res://build/scenes/gatos.tscn<>uid://dvb0texx0hvra::::res://build/scenes/jogador.tscn
+mundo.tscn::PackedScene::4742490058706314693::1724260600::0::1::::<><>::res://build/scripts/mundo.gd<>uid://b00d6igdeey71::::res://build/scenes/portas.tscn<>uid://jlvs6btlksbi::::res://build/scenes/novelos.tscn<>uid://dnblctmdegat2::::res://build/scenes/gatos.tscn<>uid://dvb0texx0hvra::::res://build/scenes/jogador.tscn
 novelos.tscn::PackedScene::655716579822378386::1724259579::0::1::::<><>::res://build/scripts/novelos.gd
 portas.tscn::PackedScene::4192989158682221562::1724259579::0::1::::<><>::res://build/scripts/portas.gd<>uid://dos6rlnuf20xf::::res://build/assets/Áudio/porta.ogg
 ::res://build/scripts/::1724259578
@@ -42,6 +42,6 @@ menu_inicial.gd::GDScript::-1::1724259524::0::1::::<>Control<>::
 mundo.gd::GDScript::-1::1724259578::0::1::::<>Node3D<>::
 novelos.gd::GDScript::-1::1724180563::0::1::::<>Area3D<>::
 portas.gd::GDScript::-1::1724256329::0::1::::<>Node3D<>::
-::res://game.exe/::1724259968
-::res://game.exe/linux/::1724260384
-::res://game.exe/windows/::1724260413
+::res://game/::1724259968
+::res://game/linux/::1724260384
+::res://game/windows/::1724260413
