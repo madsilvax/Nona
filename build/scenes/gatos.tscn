@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://dnblctmdegat2"]
+[gd_scene load_steps=12 format=3 uid="uid://dnblctmdegat2"]
 
 [ext_resource type="Texture2D" uid="uid://8qqogjya6m57" path="res://build/assets/Sprites/gato.png" id="2_603ck"]
 [ext_resource type="Script" path="res://build/scripts/gatos.gd" id="2_ur2t3"]
-[ext_resource type="AudioStream" uid="uid://bpwt0jb1u71x4" path="res://build/assets/monster_die.wav" id="3_8ku05"]
+[ext_resource type="AudioStream" uid="uid://jpat01jh4px6" path="res://build/assets/Áudio/miado.mp3" id="4_1w6db"]
 [ext_resource type="Script" path="res://build/scripts/gatossprite.gd" id="4_itqqo"]
+[ext_resource type="AudioStream" uid="uid://7gjeh4j3ta8y" path="res://build/assets/Áudio/ronronado.mp3" id="5_frudu"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hdkx4"]
 radius = 0.2
@@ -26,6 +27,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MiauFX:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_q3iqc"]
@@ -61,6 +74,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MiauFX:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_unt86"]
@@ -98,10 +123,12 @@ libraries = {
 }
 autoplay = "catidle"
 
-[node name="MiauFX" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_8ku05")
+[node name="MiauFX" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_1w6db")
+volume_db = -20.0
 
-[node name="RonromFX" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_8ku05")
+[node name="RonromFX" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_frudu")
+volume_db = 3.0
 
 [connection signal="body_entered" from="Alcance de ataque" to="." method="_on_alcance_de_ataque_body_entered"]

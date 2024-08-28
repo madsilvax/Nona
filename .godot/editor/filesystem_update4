@@ -1,1 +1,6 @@
+res://build/scenes/menu_inicial.tscn
 res://build/scenes/mundo.tscn
+res://build/scenes/jogador.tscn
+res://build/scenes/gatos.tscn
+res://build/scenes/portas.tscn
+res://build/scripts/portas.gd

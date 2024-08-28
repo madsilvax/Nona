@@ -11,9 +11,11 @@ func _input(event):
 			porta_aberta = !porta_aberta
 			if porta_aberta == true:
 				$AnimationPlayer.play("porta aberta")
+				$PortaFX.play()
 				
 			else:
 				$AnimationPlayer.play("porta fechada")
+				$PortaFX.play()
 
 func _on_Area_body_entered(body):
 	if body.name == "Jogador":

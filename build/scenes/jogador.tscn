@@ -2,55 +2,55 @@
 
 [ext_resource type="Script" path="res://build/scripts/jogador.gd" id="1_nj6ir"]
 [ext_resource type="Texture2D" uid="uid://7jvj37umbrny" path="res://build/assets/UI jogador/interface.png" id="2_kwepg"]
-[ext_resource type="Texture2D" uid="uid://dl7w3wm0uig20" path="res://build/assets/UI jogador/gun_sprites.png" id="2_xnqla"]
 [ext_resource type="FontFile" uid="uid://bus25rs5meaoj" path="res://build/assets/JustAnotherHand-Regular.ttf" id="3_boigo"]
-[ext_resource type="AudioStream" uid="uid://dltkq7btx2bx1" path="res://build/assets/revolver_shot1.wav" id="3_nhvua"]
+[ext_resource type="Texture2D" uid="uid://c7upqy8mpfun4" path="res://build/assets/UI jogador/mao.png" id="4_0uun6"]
+[ext_resource type="AudioStream" uid="uid://c630ankeo8o6h" path="res://build/assets/Áudio/arremesso.mp3" id="5_sqomy"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_i1m5g"]
 height = 1.6
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ixea1"]
-atlas = ExtResource("2_xnqla")
-region = Rect2(512, 0, 512, 512)
+[sub_resource type="AtlasTexture" id="AtlasTexture_j3s7m"]
+atlas = ExtResource("4_0uun6")
+region = Rect2(625, 0, 625, 625)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_07nfm"]
-atlas = ExtResource("2_xnqla")
-region = Rect2(1024, 0, 512, 512)
+[sub_resource type="AtlasTexture" id="AtlasTexture_ak63y"]
+atlas = ExtResource("4_0uun6")
+region = Rect2(1250, 0, 625, 625)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kskar"]
-atlas = ExtResource("2_xnqla")
-region = Rect2(1536, 0, 512, 512)
+[sub_resource type="AtlasTexture" id="AtlasTexture_uryn2"]
+atlas = ExtResource("4_0uun6")
+region = Rect2(1875, 0, 625, 625)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ktrmg"]
-atlas = ExtResource("2_xnqla")
-region = Rect2(0, 0, 512, 512)
+[sub_resource type="AtlasTexture" id="AtlasTexture_h13cy"]
+atlas = ExtResource("4_0uun6")
+region = Rect2(0, 0, 625, 625)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_otax2"]
-atlas = ExtResource("2_xnqla")
-region = Rect2(0, 0, 512, 512)
+[sub_resource type="AtlasTexture" id="AtlasTexture_frevm"]
+atlas = ExtResource("4_0uun6")
+region = Rect2(0, 0, 625, 625)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2xfnw"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ixea1")
+"texture": SubResource("AtlasTexture_j3s7m")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_07nfm")
+"texture": SubResource("AtlasTexture_ak63y")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_kskar")
+"texture": SubResource("AtlasTexture_uryn2")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ktrmg")
+"texture": SubResource("AtlasTexture_h13cy")
 }],
 "loop": false,
 "name": &"arremessar",
-"speed": 10.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_otax2")
+"texture": SubResource("AtlasTexture_frevm")
 }],
 "loop": false,
 "name": &"ocioso",
@@ -68,7 +68,7 @@ events = [SubResource("InputEventAction_o4co5")]
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l1xg3"]
 
 [node name="Jogador" type="CharacterBody3D" groups=["Jogador"]]
-collision_mask = 15
+collision_mask = 31
 script = ExtResource("1_nj6ir")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -138,10 +138,9 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Mao" type="AnimatedSprite2D" parent="UI jogador/MarginContainer/Pov"]
-position = Vector2(1440, 824)
+position = Vector2(1440, 767)
 sprite_frames = SubResource("SpriteFrames_2xfnw")
-animation = &"ocioso"
-autoplay = "ocioso"
+animation = &"arremessar"
 
 [node name="Menu" type="Control" parent="UI jogador/MarginContainer"]
 visible = false
@@ -258,7 +257,8 @@ layout_mode = 2
 [node name="Efeitos Sonoros" type="Node" parent="."]
 
 [node name="ArremessarFX" type="AudioStreamPlayer" parent="Efeitos Sonoros"]
-stream = ExtResource("3_nhvua")
+stream = ExtResource("5_sqomy")
+volume_db = -20.0
 
 [connection signal="pressed" from="UI jogador/MarginContainer/Menu/VBoxContainer/retomar_btn" to="." method="_on_retomar_btn_pressed"]
 [connection signal="pressed" from="UI jogador/MarginContainer/Menu/VBoxContainer/reiniciar_btn" to="." method="_on_reiniciar_btn_pressed"]

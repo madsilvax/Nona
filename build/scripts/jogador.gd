@@ -59,6 +59,7 @@ func _input(event):
 	if event is InputEventMouseMotion:
 		rotation_degrees.y -= event.relative.x * MOUSE_SENSITIVITY
 		camera_3d.rotation_degrees.x -= event.relative.y * MOUSE_SENSITIVITY
+		camera_3d.rotation.x= clamp(camera_3d.rotation.x,-1.6, 1.6)
 
 func _unhandled_input(event):
 	if event.is_action_pressed("menu"):

@@ -1,3 +1,5 @@
+AudioStreamPlayer3D
+AudioStreamPlayer
 Label
 Node3D
 TextureRect
@@ -10,5 +12,3 @@ HSeparator
 VBoxContainer
 MarginContainer
 Control
-MeshInstance3D
-RayCast3D
