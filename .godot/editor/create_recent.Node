@@ -1,3 +1,5 @@
+StaticBody3D
+MeshInstance3D
 AudioStreamPlayer3D
 AudioStreamPlayer
 Label
@@ -11,4 +13,3 @@ Button
 HSeparator
 VBoxContainer
 MarginContainer
-Control

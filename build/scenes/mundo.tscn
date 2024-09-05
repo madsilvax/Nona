@@ -138,7 +138,6 @@ mesh = SubResource("BoxMesh_nevti")
 shape = SubResource("ConcavePolygonShape3D_smmp1")
 
 [node name="Portas" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000890255, 0.032896, -0.00793839)
 
 [node name="Porta" parent="Portas" instance=ExtResource("2_u2544")]
 transform = Transform3D(-2.62268e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.62268e-08, 2.994, 0, -8.15)
@@ -176,7 +175,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.3287, 0.2, -7.20947)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.66322, 0.2, -8.01895)
 
 [node name="Gatos" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000890255, 0.032896, -0.00793839)
 
 [node name="Gatos" parent="Gatos" instance=ExtResource("3_tsgw8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.35252, 0.332893, -6.74928)
