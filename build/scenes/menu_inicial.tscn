@@ -89,6 +89,7 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 stream = ExtResource("4_urxlt")
 autoplay = true
+loop = true
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/iniciar_btn" to="." method="_on_iniciar_btn_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/créditos_btn" to="." method="_on_créditos_btn_pressed"]

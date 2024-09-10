@@ -10,8 +10,7 @@ extends CharacterBody3D
 @onready var arremeessarFX = $"Efeitos Sonoros/ArremessarFX"
 @onready var interagir = $"UI jogador/MarginContainer/Pov/Interagir"
 
-
-const SPEED = 2.0
+const SPEED = 3.0
 const MOUSE_SENSITIVITY = 0.03
 
 var gravidade = ProjectSettings.get_setting("physics/3d/default_gravity")

@@ -1,16 +1,16 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1725496188
+::res://::1725974363
 export_presets.cfg::TextFile::-1::1724870708::0::1::::<><>::
 icon.svg::CompressedTexture2D::5779374250829346702::1721087068::1721087084::1::::<><>::
 ::res://build/::1724259170
-::res://build/assets/::1725496030
+::res://build/assets/::1725974363
 JustAnotherHand-Regular.ttf::FontFile::3829050210731354501::1723505016::1724259224::1::::<><>::
-::res://build/assets/Modelos 3D/::1725497193
-casa.blend::PackedScene::8175286134539989867::1725497193::1725497338::1::::<><>::
+::res://build/assets/Modelos 3D/::1725979093
+casa.blend::PackedScene::8175286134539989867::1725979069::1725979093::1::::<><>::
 casa.glb::PackedScene::3146352456221278897::1725494900::1725494903::1::::<><>::
-novelo.glb::PackedScene::3804656789966372107::1724168280::1725479570::1::::<><>::
+novelo.glb::PackedScene::3804656789966372107::1725979295::1725979299::1::::<><>::
 porta.glb::PackedScene::8029038641995944031::1617503018::1725479570::1::::<><>::
-::res://build/assets/Sprites/::1724259225
+::res://build/assets/Sprites/::1725977289
 gato.png::CompressedTexture2D::2350258687253981188::1724177219::1724259225::1::::<><>::
 ::res://build/assets/UI jogador/::1724868990
 interface.png::CompressedTexture2D::2265915046209163358::1724179306::1724259225::1::::<><>::
@@ -23,20 +23,20 @@ arremesso.mp3::AudioStreamMP3::7008016720551402053::1724867571::1724867638::1:::
 miado.mp3::AudioStreamMP3::662700542805480673::1724852230::1724867638::1::::<><>::
 porta.ogg::AudioStreamOggVorbis::8180977845612766175::1617503018::1724259224::1::::<><>::
 ronronado.mp3::AudioStreamMP3::2258983271961775922::1724852325::1724867638::1::::<><>::
-::res://build/scenes/::1725497158
+::res://build/scenes/::1725979167
+casa.tscn::PackedScene::4894367034937745854::1725826897::0::1::::<><>::uid://doqf1eb13y1pf::::res://build/assets/Modelos 3D/casa.blend<>uid://b00d6igdeey71::::res://build/scenes/portas.tscn
 fim.tscn::PackedScene::9114792056746893338::1724259579::0::1::::<><>::res://build/scripts/fim.gd<>uid://dhyp62kfxawv6::::res://build/assets/UI Menu/Background.jpeg
 gatos.tscn::PackedScene::8074453871259218673::1724870654::0::1::::<><>::uid://8qqogjya6m57::::res://build/assets/Sprites/gato.png<>res://build/scripts/gatos.gd<>uid://jpat01jh4px6::::res://build/assets/Áudio/miado.mp3<>res://build/scripts/gatossprite.gd<>uid://7gjeh4j3ta8y::::res://build/assets/Áudio/ronronado.mp3
-jogador.tscn::PackedScene::8636844246838022910::1724870654::0::1::::<><>::res://build/scripts/jogador.gd<>uid://7jvj37umbrny::::res://build/assets/UI jogador/interface.png<>uid://bus25rs5meaoj::::res://build/assets/JustAnotherHand-Regular.ttf<>uid://c7upqy8mpfun4::::res://build/assets/UI jogador/mao.png<>uid://c630ankeo8o6h::::res://build/assets/Áudio/arremesso.mp3
-menu_inicial.tscn::PackedScene::724415294462023657::1725496196::0::1::::<><>::res://build/scripts/menu_inicial.gd<>uid://dhyp62kfxawv6::::res://build/assets/UI Menu/Background.jpeg<>res://build/assets/UI Menu/NONA MENU_ogv.ogv
-mundo.tscn::PackedScene::4742490058706314693::1725497158::0::1::::<><>::res://build/scripts/mundo.gd<>uid://b00d6igdeey71::::res://build/scenes/portas.tscn<>uid://jlvs6btlksbi::::res://build/scenes/novelos.tscn<>uid://dnblctmdegat2::::res://build/scenes/gatos.tscn<>uid://dvb0texx0hvra::::res://build/scenes/jogador.tscn
-novelos.tscn::PackedScene::655716579822378386::1725482929::0::1::::<><>::res://build/scripts/novelos.gd
-portas.tscn::PackedScene::4192989158682221562::1725496196::0::1::::<><>::res://build/scripts/portas.gd<>uid://dos6rlnuf20xf::::res://build/assets/Áudio/porta.ogg
-casa.tscn::PackedScene::4894367034937745854::1725497069::0::1::::<><>::uid://doqf1eb13y1pf::::res://build/assets/Modelos 3D/casa.blend
-::res://build/scripts/::1724870552
+jogador.tscn::PackedScene::8636844246838022910::1725978978::0::1::::<><>::res://build/scripts/jogador.gd<>uid://7jvj37umbrny::::res://build/assets/UI jogador/interface.png<>uid://bus25rs5meaoj::::res://build/assets/JustAnotherHand-Regular.ttf<>uid://c7upqy8mpfun4::::res://build/assets/UI jogador/mao.png<>uid://c630ankeo8o6h::::res://build/assets/Áudio/arremesso.mp3
+menu_inicial.tscn::PackedScene::724415294462023657::1725979167::0::1::::<><>::res://build/scripts/menu_inicial.gd<>uid://dhyp62kfxawv6::::res://build/assets/UI Menu/Background.jpeg<>res://build/assets/UI Menu/NONA MENU_ogv.ogv
+mundo.tscn::PackedScene::4742490058706314693::1725978978::0::1::::<><>::res://build/scripts/mundo.gd<>uid://jlvs6btlksbi::::res://build/scenes/novelos.tscn<>uid://cby4rlsvi8c5s::::res://build/scenes/casa.tscn<>uid://dnblctmdegat2::::res://build/scenes/gatos.tscn<>uid://dvb0texx0hvra::::res://build/scenes/jogador.tscn
+novelos.tscn::PackedScene::655716579822378386::1725979032::0::1::::<><>::res://build/scripts/novelos.gd
+portas.tscn::PackedScene::4192989158682221562::1725826897::0::1::::<><>::res://build/scripts/portas.gd<>uid://dos6rlnuf20xf::::res://build/assets/Áudio/porta.ogg
+::res://build/scripts/::1725974732
 fim.gd::GDScript::-1::1724259547::0::1::::<>Control<>::
 gatos.gd::GDScript::-1::1724867999::0::1::::<>CharacterBody3D<>::
 gatossprite.gd::GDScript::-1::1724177728::0::1::::<>Sprite3D<>::
-jogador.gd::GDScript::-1::1724869819::0::1::::<>CharacterBody3D<>::
+jogador.gd::GDScript::-1::1725974732::0::1::::<>CharacterBody3D<>::
 menu_inicial.gd::GDScript::-1::1724259524::0::1::::<>Control<>::
 mundo.gd::GDScript::-1::1724259578::0::1::::<>Node3D<>::
 novelos.gd::GDScript::-1::1724180563::0::1::::<>Area3D<>::

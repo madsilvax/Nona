@@ -7,7 +7,8 @@
 [ext_resource type="AudioStream" uid="uid://c630ankeo8o6h" path="res://build/assets/Áudio/arremesso.mp3" id="5_sqomy"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_i1m5g"]
-height = 1.6
+margin = 0.4
+radius = 0.3
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j3s7m"]
 atlas = ExtResource("4_0uun6")
@@ -72,11 +73,11 @@ collision_mask = 31
 script = ExtResource("1_nj6ir")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_i1m5g")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
 
 [node name="RayCast3D" type="RayCast3D" parent="Camera3D"]
 target_position = Vector3(0, 0, -10)

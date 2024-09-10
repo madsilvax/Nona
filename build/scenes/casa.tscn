@@ -1,5 +1,30 @@
-[gd_scene load_steps=2 format=3 uid="uid://cby4rlsvi8c5s"]
+[gd_scene load_steps=3 format=3 uid="uid://cby4rlsvi8c5s"]
 
 [ext_resource type="PackedScene" uid="uid://doqf1eb13y1pf" path="res://build/assets/Modelos 3D/casa.blend" id="1_y1tqw"]
+[ext_resource type="PackedScene" uid="uid://b00d6igdeey71" path="res://build/scenes/portas.tscn" id="2_1t1s3"]
 
 [node name="Casa" instance=ExtResource("1_y1tqw")]
+
+[node name="Portas" type="Node3D" parent="." index="68"]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
+
+[node name="Porta" parent="Portas" index="0" instance=ExtResource("2_1t1s3")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -19.75, 0.5, -5.825)
+
+[node name="Porta2" parent="Portas" index="1" instance=ExtResource("2_1t1s3")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -19.75, 0.5, 14.175)
+
+[node name="Porta3" parent="Portas" index="2" instance=ExtResource("2_1t1s3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.32513, 0.5, -9.5)
+
+[node name="Porta4" parent="Portas" index="3" instance=ExtResource("2_1t1s3")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -11.15, 7.15, -4.625)
+
+[node name="Porta5" parent="Portas" index="4" instance=ExtResource("2_1t1s3")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.075, 7.15, 13.325)
+
+[node name="Porta6" parent="Portas" index="5" instance=ExtResource("2_1t1s3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.325, 7.15, -9.5)
+
+[node name="Porta7" parent="Portas" index="6" instance=ExtResource("2_1t1s3")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 21.4004, 7.15, -13.3)
