@@ -55,7 +55,58 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.21697, 4.59929, 6.71067)
 [node name="Gatos" type="Node3D" parent="."]
 
 [node name="Gatos" parent="Gatos" instance=ExtResource("3_tsgw8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.353, 4.69355, 4.44574)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.33169, 4.69355, 5.73846)
+
+[node name="Gatos2" parent="Gatos" instance=ExtResource("3_tsgw8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.71728, 4.69355, -0.892871)
+
+[node name="Gatos3" parent="Gatos" instance=ExtResource("3_tsgw8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.36687, 4.69355, -2.3993)
+
+[node name="Gatos4" parent="Gatos" instance=ExtResource("3_tsgw8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.0423, 4.69355, -7.26758)
+
+[node name="Gatos5" parent="Gatos" instance=ExtResource("3_tsgw8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.1219, 4.69355, -3.36163)
+
+[node name="Gatos6" parent="Gatos" instance=ExtResource("3_tsgw8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.27758, 4.69355, 6.85901)
+
+[node name="Gatos7" parent="Gatos" instance=ExtResource("3_tsgw8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.59267, 4.69355, -1.29434)
+
+[node name="Gatos8" parent="Gatos" instance=ExtResource("3_tsgw8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.95192, 4.69355, -5.37399)
+
+[node name="Gatos9" parent="Gatos" instance=ExtResource("3_tsgw8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.1806, 2.99828, -0.96201)
+
+[node name="Gatos10" parent="Gatos" instance=ExtResource("3_tsgw8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.10508, 0.752648, -2.64255)
+
+[node name="Gatos11" parent="Gatos" instance=ExtResource("3_tsgw8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.38367, 0.752648, 3.11978)
+
+[node name="Gatos12" parent="Gatos" instance=ExtResource("3_tsgw8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.60011, 0.752648, 3.24819)
+
+[node name="Gatos13" parent="Gatos" instance=ExtResource("3_tsgw8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.83013, 0.752648, -3.77841)
+
+[node name="Gatos14" parent="Gatos" instance=ExtResource("3_tsgw8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.85975, 0.752648, 7.33462)
+
+[node name="Gatos15" parent="Gatos" instance=ExtResource("3_tsgw8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.1532, 0.752648, 5.93958)
+
+[node name="Gatos16" parent="Gatos" instance=ExtResource("3_tsgw8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.292, 0.752648, -0.225121)
+
+[node name="Gatos17" parent="Gatos" instance=ExtResource("3_tsgw8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.79697, 0.752648, -5.90399)
+
+[node name="Gatos18" parent="Gatos" instance=ExtResource("3_tsgw8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.50501, 0.752648, 2.90567)
 
 [node name="Jogador" parent="." instance=ExtResource("3_xa5n1")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 13.9469, 4.5, 6.41807)
