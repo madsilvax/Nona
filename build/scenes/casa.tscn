@@ -5,6 +5,193 @@
 
 [node name="Casa" instance=ExtResource("1_y1tqw")]
 
+[node name="StaticBody3D" parent="esq_001" index="0"]
+collision_layer = 16
+collision_mask = 3
+
+[node name="StaticBody3D" parent="dir_001" index="0"]
+collision_layer = 16
+collision_mask = 3
+
+[node name="fundo_001" parent="." index="2"]
+layers = 3
+
+[node name="StaticBody3D" parent="fundo_001" index="0"]
+collision_layer = 16
+collision_mask = 3
+
+[node name="StaticBody3D" parent="frente_002" index="0"]
+collision_layer = 16
+collision_mask = 3
+
+[node name="StaticBody3D" parent="dir_003" index="0"]
+collision_layer = 16
+collision_mask = 3
+
+[node name="StaticBody3D" parent="frente_004" index="0"]
+collision_layer = 16
+collision_mask = 3
+
+[node name="StaticBody3D" parent="frente_001" index="0"]
+collision_layer = 16
+collision_mask = 3
+
+[node name="StaticBody3D" parent="dir_004" index="0"]
+collision_layer = 16
+collision_mask = 3
+
+[node name="StaticBody3D" parent="esq_002" index="0"]
+collision_layer = 16
+collision_mask = 3
+
+[node name="StaticBody3D" parent="frente_005" index="0"]
+collision_layer = 16
+collision_mask = 3
+
+[node name="StaticBody3D" parent="esq_003" index="0"]
+collision_layer = 16
+collision_mask = 3
+
+[node name="StaticBody3D" parent="parapeito_002" index="0"]
+collision_layer = 16
+collision_mask = 3
+
+[node name="StaticBody3D" parent="dir_002" index="0"]
+collision_layer = 16
+collision_mask = 3
+
+[node name="StaticBody3D" parent="frente_003" index="0"]
+collision_layer = 16
+collision_mask = 3
+
+[node name="StaticBody3D" parent="parapeito_001" index="0"]
+collision_layer = 16
+collision_mask = 3
+
+[node name="StaticBody3D" parent="teto" index="0"]
+collision_layer = 16
+collision_mask = 3
+
+[node name="StaticBody3D" parent="parede_014" index="0"]
+collision_layer = 16
+collision_mask = 3
+
+[node name="StaticBody3D" parent="parede_004" index="0"]
+collision_layer = 16
+collision_mask = 3
+
+[node name="StaticBody3D" parent="parede_005" index="0"]
+collision_layer = 16
+collision_mask = 3
+
+[node name="StaticBody3D" parent="parede_003" index="0"]
+collision_layer = 16
+collision_mask = 3
+
+[node name="StaticBody3D" parent="parede_002" index="0"]
+collision_layer = 16
+collision_mask = 3
+
+[node name="StaticBody3D" parent="parede_001" index="0"]
+collision_layer = 16
+collision_mask = 3
+
+[node name="StaticBody3D" parent="parede_011" index="0"]
+collision_layer = 16
+collision_mask = 3
+
+[node name="StaticBody3D" parent="parede_006" index="0"]
+collision_layer = 16
+collision_mask = 3
+
+[node name="StaticBody3D" parent="parede_012" index="0"]
+collision_layer = 16
+collision_mask = 3
+
+[node name="StaticBody3D" parent="parede_009" index="0"]
+collision_layer = 16
+collision_mask = 3
+
+[node name="StaticBody3D" parent="parede_008" index="0"]
+collision_layer = 16
+collision_mask = 3
+
+[node name="StaticBody3D" parent="parede_010" index="0"]
+collision_layer = 16
+collision_mask = 3
+
+[node name="StaticBody3D" parent="parede_007" index="0"]
+collision_layer = 16
+collision_mask = 3
+
+[node name="StaticBody3D" parent="degrau_010" index="0"]
+collision_layer = 16
+collision_mask = 3
+
+[node name="StaticBody3D" parent="degrau_020" index="0"]
+collision_layer = 16
+collision_mask = 3
+
+[node name="StaticBody3D" parent="piso_001" index="0"]
+collision_layer = 16
+collision_mask = 3
+
+[node name="StaticBody3D" parent="parede_013_1" index="0"]
+collision_layer = 16
+collision_mask = 3
+
+[node name="StaticBody3D" parent="parede_013_2" index="0"]
+collision_layer = 16
+collision_mask = 3
+
+[node name="StaticBody3D" parent="parapeito_003" index="0"]
+collision_layer = 16
+collision_mask = 3
+
+[node name="StaticBody3D" parent="parapeito_005" index="0"]
+collision_layer = 16
+collision_mask = 3
+
+[node name="StaticBody3D" parent="parapeito_004" index="0"]
+collision_layer = 16
+collision_mask = 3
+
+[node name="StaticBody3D" parent="piso_002" index="0"]
+collision_layer = 16
+collision_mask = 3
+
+[node name="StaticBody3D" parent="parede_018" index="0"]
+collision_layer = 16
+collision_mask = 3
+
+[node name="StaticBody3D" parent="parede_019" index="0"]
+collision_layer = 16
+collision_mask = 3
+
+[node name="StaticBody3D" parent="parede_020" index="0"]
+collision_layer = 16
+collision_mask = 3
+
+[node name="StaticBody3D" parent="parapeito_006" index="0"]
+collision_layer = 16
+collision_mask = 3
+
+[node name="StaticBody3D" parent="parapeito_007" index="0"]
+collision_layer = 16
+collision_mask = 3
+
+[node name="StaticBody3D" parent="parapeito_008" index="0"]
+collision_layer = 16
+collision_mask = 3
+
+[node name="StaticBody3D" parent="parede_015" index="0"]
+collision_layer = 16
+collision_mask = 3
+
+[node name="StaticBody3D" parent="parede_017" index="0"]
+collision_layer = 16
+collision_mask = 3
+
 [node name="Portas" type="Node3D" parent="." index="68"]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
 
@@ -27,4 +214,19 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.075
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.325, 7.15, -9.5)
 
 [node name="Porta7" parent="Portas" index="6" instance=ExtResource("2_1t1s3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.0003, 7.15, 2.84701)
+
+[node name="Porta8" parent="Portas" index="7" instance=ExtResource("2_1t1s3")]
 transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 21.4004, 7.15, -13.3)
+
+[node name="StaticBody3D" parent="parede_023" index="0"]
+collision_layer = 16
+collision_mask = 3
+
+[node name="StaticBody3D" parent="parede_024" index="0"]
+collision_layer = 16
+collision_mask = 3
+
+[node name="StaticBody3D" parent="parede_016" index="0"]
+collision_layer = 16
+collision_mask = 3

@@ -14,7 +14,7 @@ const SPEED = 3.0
 const MOUSE_SENSITIVITY = 0.03
 
 var gravidade = ProjectSettings.get_setting("physics/3d/default_gravity")
-var municao = 50
+var municao = 5
 var pode_arremessar = true
 var derrotado = false
 
@@ -28,7 +28,8 @@ func _ready():
 
 func _process(delta):
 	if Input.is_action_just_pressed("arremessar"):
-		arremessar()
+		if pode_arremessar == true and municao > 0:
+			arremessar()
 	if derrotado:
 		return
 

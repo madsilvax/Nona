@@ -33,6 +33,71 @@ transform = Transform3D(-0.185264, 0.819918, 0.541675, 0.719846, -0.262003, 0.64
 light_bake_mode = 1
 shadow_enabled = true
 
+[node name="Lampada" type="OmniLight3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.449, 7.8, 5.92)
+light_energy = 2.0
+omni_range = 10.0
+
+[node name="Lampada2" type="OmniLight3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.214, 7.8, -4.604)
+light_energy = 2.0
+omni_range = 10.0
+
+[node name="Lampada3" type="OmniLight3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.3374, 7.8, -3.76569)
+light_energy = 2.0
+omni_range = 10.0
+
+[node name="Lampada4" type="OmniLight3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.925638, 7.8, 1.61421)
+light_energy = 2.0
+omni_range = 10.0
+
+[node name="Lampada5" type="OmniLight3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.26827, 7.8, -7.74662)
+light_energy = 2.0
+omni_range = 10.0
+
+[node name="Lampada6" type="OmniLight3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.1822, 7.8, 5.16543)
+light_energy = 2.0
+omni_range = 10.0
+
+[node name="Lampada7" type="OmniLight3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.1418, 7.8, -4.65149)
+light_energy = 2.0
+omni_range = 10.0
+
+[node name="Lampada8" type="OmniLight3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.268, 3.8, -7.747)
+light_energy = 2.0
+omni_range = 10.0
+
+[node name="Lampada9" type="OmniLight3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.00566, 3.8, -2.38849)
+light_energy = 2.0
+omni_range = 10.0
+
+[node name="Lampada10" type="OmniLight3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.8318, 3.8, 4.71329)
+light_energy = 2.0
+omni_range = 10.0
+
+[node name="Lampada11" type="OmniLight3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.28374, 3.8, 5.83862)
+light_energy = 2.0
+omni_range = 10.0
+
+[node name="Lampada12" type="OmniLight3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.7727, 3.8, 5.83862)
+light_energy = 2.0
+omni_range = 10.0
+
+[node name="Lampada13" type="OmniLight3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.64594, 3.8, -4.02071)
+light_energy = 2.0
+omni_range = 10.0
+
 [node name="Ambiente" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000890255, 0.032896, -0.00793839)
 
@@ -55,10 +120,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.21697, 4.59929, 6.71067)
 [node name="Gatos" type="Node3D" parent="."]
 
 [node name="Gatos" parent="Gatos" instance=ExtResource("3_tsgw8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.33169, 4.69355, 5.73846)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.49489, 4.69355, 5.73846)
 
 [node name="Gatos2" parent="Gatos" instance=ExtResource("3_tsgw8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.71728, 4.69355, -0.892871)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.30859, 4.69355, -2.0261)
 
 [node name="Gatos3" parent="Gatos" instance=ExtResource("3_tsgw8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.36687, 4.69355, -2.3993)
