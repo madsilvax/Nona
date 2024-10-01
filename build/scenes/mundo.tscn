@@ -123,7 +123,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.21697, 4.59929, 6.71067)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.49489, 4.69355, 5.73846)
 
 [node name="Gatos2" parent="Gatos" instance=ExtResource("3_tsgw8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.30859, 4.69355, -2.0261)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9945, 4.69355, -2.08581)
 
 [node name="Gatos3" parent="Gatos" instance=ExtResource("3_tsgw8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.36687, 4.69355, -2.3993)

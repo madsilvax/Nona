@@ -14,7 +14,7 @@ const SPEED = 3.0
 const MOUSE_SENSITIVITY = 0.03
 
 var gravidade = ProjectSettings.get_setting("physics/3d/default_gravity")
-var municao = 5
+var municao = 30
 var pode_arremessar = true
 var derrotado = false
 
@@ -34,6 +34,7 @@ func _process(delta):
 		return
 
 func _physics_process(delta):
+	anim()
 	if derrotado:
 		return
 	
@@ -71,10 +72,11 @@ func _unhandled_input(event):
 func arremessar():
 	if municao == 0:
 		pode_arremessar = false
+		mao.play("ocioso0")
 	if !pode_arremessar:
 		return
-	pode_arremessar = false
 	mao.play("arremessar")
+	pode_arremessar = false
 	arremeessarFX.play()
 	if raycast_3d.is_colliding() and gatos.has_method("distrair"):
 		raycast_3d.get_collider().distrair()
@@ -90,6 +92,12 @@ func novelos(municao: int):
 func coletar_novelos():
 	municao += 1
 	novelos(municao)
+
+func anim():
+	if municao == 0 and pode_arremessar == true:
+		mao.play("ocioso0")
+	if municao > 0 and pode_arremessar == true:
+		mao.play("ocioso1")
 
 func interagir_show():
 	interagir.show()
