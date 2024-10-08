@@ -1,0 +1,8 @@
+res://build/scenes/jogador.tscn
+res://build/scenes/menu_inicial.tscn
+res://build/scenes/mundo.tscn
+res://build/scenes/gatos.tscn
+res://build/scripts/gatos.gd
+res://build/scripts/jogador.gd
+res://build/scripts/mundo.gd
+res://build/scenes/novelos.tscn

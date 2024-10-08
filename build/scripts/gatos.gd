@@ -5,7 +5,7 @@ extends CharacterBody3D
 @onready var alcance_de_ataque = $"Alcance de ataque"
 
 const move_speed = 1.5
-const campo_de_visao = 4.0
+const campo_de_visao = 6.0
 
 var distraido = false
 

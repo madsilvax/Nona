@@ -1,3 +1,6 @@
+TextureRect
+Label
+Timer
 OmniLight3D
 CollisionShape3D
 Area3D
@@ -6,10 +9,6 @@ StaticBody3D
 MeshInstance3D
 AudioStreamPlayer3D
 AudioStreamPlayer
-Label
-TextureRect
 VideoStreamPlayer
 CharacterBody3D
 Button
-HSeparator
-VBoxContainer

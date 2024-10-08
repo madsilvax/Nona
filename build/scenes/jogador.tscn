@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://c4fo1ksbpcuj8" path="res://build/assets/UI jogador/municao.png" id="3_afoa4"]
 [ext_resource type="FontFile" uid="uid://bus25rs5meaoj" path="res://build/assets/JustAnotherHand-Regular.ttf" id="3_boigo"]
 [ext_resource type="Texture2D" uid="uid://c7upqy8mpfun4" path="res://build/assets/UI jogador/mao.png" id="4_0uun6"]
-[ext_resource type="Texture2D" uid="uid://thcyxqg08mo7" path="res://build/assets/UI jogador/relogio.png" id="4_20bec"]
 [ext_resource type="AudioStream" uid="uid://c630ankeo8o6h" path="res://build/assets/Áudio/arremesso.mp3" id="5_sqomy"]
+[ext_resource type="Texture2D" uid="uid://dwwfwg1q54aui" path="res://build/assets/UI jogador/Ativo 4.png" id="6_54asy"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_i1m5g"]
 margin = 0.4
@@ -107,6 +107,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="Pov" type="Control" parent="UI jogador/MarginContainer"]
 layout_mode = 2
@@ -142,35 +144,25 @@ grow_vertical = 0
 texture = ExtResource("3_afoa4")
 stretch_mode = 2
 
-[node name="relogio" type="TextureRect" parent="UI jogador/MarginContainer/Pov"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -161.0
-offset_top = 28.0
-offset_right = 161.0
-offset_bottom = 161.0
-grow_horizontal = 2
-texture = ExtResource("4_20bec")
-stretch_mode = 2
-
 [node name="Interagir" type="Label" parent="UI jogador/MarginContainer/Pov"]
 visible = false
 layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
+anchors_preset = 8
+anchor_left = 0.5
 anchor_top = 0.5
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -164.0
-offset_top = -24.5
-offset_right = -57.0
-offset_bottom = 24.5
-grow_horizontal = 0
+offset_left = -106.5
+offset_top = 85.0
+offset_right = 106.5
+offset_bottom = 134.0
+grow_horizontal = 2
 grow_vertical = 2
-text = "Pressione \"E\"
-para interagir"
+theme_override_fonts/font = ExtResource("3_boigo")
+theme_override_font_sizes/font_size = 30
+text = "Pressione \"E\" para interagir"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Novelos" type="Label" parent="UI jogador/MarginContainer/Pov"]
 layout_mode = 1
@@ -191,8 +183,51 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Mao" type="AnimatedSprite2D" parent="UI jogador/MarginContainer/Pov"]
-position = Vector2(1440, 767)
+[node name="obetivo" type="TextureRect" parent="UI jogador/MarginContainer/Pov"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 27.0
+offset_top = -229.0
+offset_right = 349.0
+offset_bottom = -96.0
+grow_vertical = 0
+texture = ExtResource("6_54asy")
+
+[node name="objetivo" type="Label" parent="UI jogador/MarginContainer/Pov/obetivo"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.5
+offset_top = -42.5
+offset_right = 96.5
+offset_bottom = 42.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_boigo")
+theme_override_font_sizes/font_size = 40
+text = "Vá para a despensa!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Mao" type="TextureRect" parent="UI jogador/MarginContainer/Pov"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Mao" type="AnimatedSprite2D" parent="UI jogador/MarginContainer/Pov/Mao"]
+position = Vector2(-583, -273)
 sprite_frames = SubResource("SpriteFrames_2xfnw")
 animation = &"ocioso1"
 

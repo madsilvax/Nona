@@ -3,7 +3,7 @@ extends CharacterBody3D
 @onready var gatos : CharacterBody3D = get_tree().get_first_node_in_group("Gatos")
 @onready var camera_3d = $Camera3D
 @onready var raycast_3d = $Camera3D/RayCast3D
-@onready var mao = $"UI jogador/MarginContainer/Pov/Mao"
+@onready var mao = $"UI jogador/MarginContainer/Pov/Mao/Mao"
 @onready var novelos_label = $"UI jogador/MarginContainer/Pov/Novelos"
 @onready var menu = $"UI jogador/MarginContainer/Menu"
 @onready var retomar_btn = $"UI jogador/MarginContainer/Menu/VBoxContainer/retomar_btn"
@@ -11,10 +11,11 @@ extends CharacterBody3D
 @onready var interagir = $"UI jogador/MarginContainer/Pov/Interagir"
 
 const SPEED = 3.0
-const MOUSE_SENSITIVITY = 0.03
+const MOUSE_SENSITIVITY = 0.1
 
 var gravidade = ProjectSettings.get_setting("physics/3d/default_gravity")
-var municao = 30
+var municao = 20
+var novelo = 0
 var pode_arremessar = true
 var derrotado = false
 
@@ -90,6 +91,7 @@ func novelos(municao: int):
 	novelos_label.text = "%d" %municao
 
 func coletar_novelos():
+	novelo += 1
 	municao += 1
 	novelos(municao)
 
@@ -116,7 +118,8 @@ func derrota():
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 func vitoria():
-	pass
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	get_tree().change_scene_to_file("res://build/scenes/fim.tscn")
 
 func _on_retomar_btn_pressed():
 	get_tree().paused = false

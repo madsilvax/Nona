@@ -4,8 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://buhae2scxbfjn" path="res://build/assets/Modelos 3D/novelo.glb" id="2_od0pl"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_46yjb"]
-height = 0.1
-radius = 0.1
+height = 0.5
 
 [node name="Novelos" type="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
