@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://build/scripts/menu_inicial.gd" id="1_3mkf8"]
 [ext_resource type="Texture2D" uid="uid://dhyp62kfxawv6" path="res://build/assets/UI Menu/Background.jpeg" id="2_0qmgu"]
-[ext_resource type="VideoStream" path="res://build/assets/UI Menu/NONA MENU_ogv.ogv" id="4_urxlt"]
+[ext_resource type="VideoStream" path="res://build/assets/UI Menu/NONA-MENU compromido.ogv" id="3_k6jij"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dvr2w"]
 
@@ -87,7 +87,7 @@ text = "sair"
 layout_mode = 2
 offset_right = 1920.0
 offset_bottom = 1080.0
-stream = ExtResource("4_urxlt")
+stream = ExtResource("3_k6jij")
 autoplay = true
 loop = true
 

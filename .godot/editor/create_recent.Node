@@ -1,3 +1,4 @@
+Sprite3D
 TextureRect
 Label
 Timer
@@ -11,4 +12,3 @@ AudioStreamPlayer3D
 AudioStreamPlayer
 VideoStreamPlayer
 CharacterBody3D
-Button

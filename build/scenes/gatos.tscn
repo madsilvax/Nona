@@ -1,6 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://dnblctmdegat2"]
+[gd_scene load_steps=13 format=3 uid="uid://dnblctmdegat2"]
 
-[ext_resource type="Texture2D" uid="uid://8qqogjya6m57" path="res://build/assets/Sprites/gato.png" id="2_603ck"]
+[ext_resource type="Texture2D" uid="uid://045qhdx8worw" path="res://build/assets/Sprites/gatos.png" id="2_3qbf1"]
 [ext_resource type="Script" path="res://build/scripts/gatos.gd" id="2_ur2t3"]
 [ext_resource type="AudioStream" uid="uid://jpat01jh4px6" path="res://build/assets/Áudio/miado.mp3" id="4_1w6db"]
 [ext_resource type="Script" path="res://build/scripts/gatossprite.gd" id="4_itqqo"]
@@ -19,26 +19,26 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("GatosSprite:frame")
+tracks/0/path = NodePath("MiauFX:playing")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0]
+"values": [false]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("MiauFX:playing")
+tracks/1/path = NodePath("GatosSprite:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [1]
 }
 
 [sub_resource type="Animation" id="Animation_q3iqc"]
@@ -55,12 +55,12 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0]
+"values": [1]
 }
 
-[sub_resource type="Animation" id="Animation_yjvnk"]
-resource_name = "catwalk"
-length = 1.4
+[sub_resource type="Animation" id="Animation_m6tw7"]
+resource_name = "catplaying"
+length = 1.6
 loop_mode = 1
 step = 0.2
 tracks/0/type = "value"
@@ -70,33 +70,52 @@ tracks/0/path = NodePath("GatosSprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6]
+"values": [9, 10, 11, 12, 13, 14, 15, 16, 17]
+}
+
+[sub_resource type="Animation" id="Animation_yjvnk"]
+resource_name = "catwalk"
+length = 1.2
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MiauFX:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("MiauFX:playing")
+tracks/1/path = NodePath("GatosSprite:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.2),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [true]
+"values": [1, 2, 3, 4, 5, 6, 7]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_unt86"]
 _data = {
 "RESET": SubResource("Animation_ui6sg"),
 "catidle": SubResource("Animation_q3iqc"),
+"catplaying": SubResource("Animation_m6tw7"),
 "catwalk": SubResource("Animation_yjvnk")
 }
 
 [node name="Gatos" type="CharacterBody3D" groups=["Gatos"]]
-transform = Transform3D(0.994876, 0, 0, 0, 0.994876, 0, 0, 0, 0.994876, 0, 0.3, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
 collision_layer = 2
 collision_mask = 17
 script = ExtResource("2_ur2t3")
@@ -111,10 +130,12 @@ collision_layer = 2
 shape = SubResource("CylinderShape3D_1pc1x")
 
 [node name="GatosSprite" type="Sprite3D" parent="."]
-transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0, 0)
+transform = Transform3D(0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.07, 0, 0, 0)
 billboard = 2
-texture = ExtResource("2_603ck")
-hframes = 7
+texture = ExtResource("2_3qbf1")
+hframes = 9
+vframes = 2
+frame = 1
 script = ExtResource("4_itqqo")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="GatosSprite"]

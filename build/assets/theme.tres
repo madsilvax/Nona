@@ -1,0 +1,25 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://isl8bitqiorq"]
+
+[ext_resource type="FontFile" uid="uid://bus25rs5meaoj" path="res://build/assets/JustAnotherHand-Regular.ttf" id="1_tfusf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aeano"]
+bg_color = Color(0.797453, 0.367265, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ckyi8"]
+bg_color = Color(0.84906, 0.40691, 0.785002, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r27uf"]
+bg_color = Color(0.559854, 0.305043, 0.770704, 1)
+
+[resource]
+default_font = ExtResource("1_tfusf")
+default_font_size = 32
+Button/styles/focus = SubResource("StyleBoxFlat_aeano")
+Button/styles/hover = SubResource("StyleBoxFlat_aeano")
+Button/styles/normal = SubResource("StyleBoxFlat_ckyi8")
+Button/styles/pressed = SubResource("StyleBoxFlat_r27uf")

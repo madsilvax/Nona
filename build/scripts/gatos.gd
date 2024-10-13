@@ -28,7 +28,7 @@ func _physics_process(delta):
 
 func distrair():
 	$RonromFX.play()
-	sprite.play("catidle")
+	sprite.play("catplaying")
 	$CollisionShape3D.set_process(false)
 	distraido = true
 	
