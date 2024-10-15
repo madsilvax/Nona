@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cby4rlsvi8c5s"]
 
-[ext_resource type="PackedScene" uid="uid://doqf1eb13y1pf" path="res://build/assets/Modelos 3D/casa.blend" id="1_y1tqw"]
+[ext_resource type="PackedScene" path="res://build/assets/Modelos 3D/casa.blend" id="1_y1tqw"]
 [ext_resource type="PackedScene" uid="uid://b00d6igdeey71" path="res://build/scenes/portas.tscn" id="2_1t1s3"]
 
 [node name="Casa" instance=ExtResource("1_y1tqw")]

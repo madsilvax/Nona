@@ -80,20 +80,8 @@ action = &"menu"
 events = [SubResource("InputEventAction_o4co5")]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q7tko"]
-resource_local_to_scene = false
-resource_name = ""
-content_margin_left = -1.0
-content_margin_top = -1.0
-content_margin_right = -1.0
-content_margin_bottom = -1.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l1xg3"]
-resource_local_to_scene = false
-resource_name = ""
-content_margin_left = -1.0
-content_margin_top = -1.0
-content_margin_right = -1.0
-content_margin_bottom = -1.0
 
 [node name="Jogador" type="CharacterBody3D" groups=["Jogador"]]
 collision_mask = 29
@@ -223,7 +211,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_boigo")
 theme_override_font_sizes/font_size = 40
-text = "Vá para a despensa!"
+text = "Vá para a cozinha!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -321,6 +309,15 @@ text = "sair"
 visible = false
 layout_mode = 2
 
+[node name="Fundo" type="ColorRect" parent="UI jogador/MarginContainer/Derrota"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.25098)
+
 [node name="Panel" type="Panel" parent="UI jogador/MarginContainer/Derrota"]
 layout_mode = 1
 anchors_preset = 8
@@ -355,10 +352,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -61.0
-offset_top = -80.0
-offset_right = 61.0
-offset_bottom = -47.0
+offset_left = -77.5
+offset_top = -78.0
+offset_right = 77.5
+offset_bottom = -38.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("7_dnfc6")

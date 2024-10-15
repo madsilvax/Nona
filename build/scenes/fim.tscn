@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://d24jj8jha26qg"]
+[gd_scene load_steps=6 format=3 uid="uid://d24jj8jha26qg"]
 
 [ext_resource type="Script" path="res://build/scripts/fim.gd" id="1_iv8qd"]
 [ext_resource type="Texture2D" uid="uid://dhyp62kfxawv6" path="res://build/assets/UI Menu/Background.jpeg" id="1_sarur"]
+[ext_resource type="FontFile" uid="uid://bus25rs5meaoj" path="res://build/assets/JustAnotherHand-Regular.ttf" id="3_jrkp2"]
+[ext_resource type="Theme" uid="uid://isl8bitqiorq" path="res://build/assets/theme.tres" id="3_n3gvn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j8bm2"]
 
 [node name="Fim" type="Control"]
 layout_mode = 3
@@ -33,7 +37,8 @@ size_flags_vertical = 4
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 26
+theme_override_fonts/font = ExtResource("3_jrkp2")
+theme_override_font_sizes/font_size = 82
 text = "MUITO OBRIGADO POR JOGAR!
 EM BREVE NOVAS ATUALIZAÇÕES"
 horizontal_alignment = 1
@@ -41,10 +46,12 @@ vertical_alignment = 1
 
 [node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_j8bm2")
 
 [node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 26
+theme = ExtResource("3_n3gvn")
+theme_override_font_sizes/font_size = 72
 text = "Menu inicial"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
