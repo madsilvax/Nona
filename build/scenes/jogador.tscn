@@ -211,7 +211,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_boigo")
 theme_override_font_sizes/font_size = 40
-text = "Vá para a cozinha!"
+text = "Nona"
 horizontal_alignment = 1
 vertical_alignment = 1
 

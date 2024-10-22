@@ -13,3 +13,9 @@ func _on_fim_body_entered(body):
 	if body.name == "Jogador":
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		get_tree().change_scene_to_file("res://build/scenes/fim.tscn")
+
+
+func _on_fimfase_body_entered(body: Node3D) -> void:
+	if body.name == "Jogador" and Global.estagio == 1 :
+		get_tree().change_scene_to_file("res://build/scenes/mundo2.tscn")
+		Global.estagio = 2

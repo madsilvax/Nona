@@ -1,2 +1,11 @@
-res://build/scenes/menu_inicial.tscn
+res://build/scenes/jogador.tscn
 res://build/assets/theme.tres
+res://build/scripts/jogador.gd
+res://build/scenes/menu_inicial.tscn
+res://build/scenes/mundo.tscn
+res://build/scenes/gatos.tscn
+res://build/scenes/fim.tscn
+res://build/scenes/mundo2.tscn
+res://build/scripts/mundo.gd
+res://build/scripts/global.gd
+res://build/scenes/casa.tscn

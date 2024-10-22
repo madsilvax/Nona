@@ -9,6 +9,7 @@ extends CharacterBody3D
 @onready var retomar_btn = $"UI jogador/MarginContainer/Menu/VBoxContainer/retomar_btn"
 @onready var arremeessarFX = $"Efeitos Sonoros/ArremessarFX"
 @onready var interagir = $"UI jogador/MarginContainer/Pov/Interagir"
+@onready var objetivo: Label = $"UI jogador/MarginContainer/Pov/obetivo/objetivo"
 
 const SPEED = 3.0
 const MOUSE_SENSITIVITY = 0.1
@@ -18,6 +19,7 @@ var municao = 20
 var novelo = 0
 var pode_arremessar = true
 var derrotado = false
+var coletaveis = 0
 
 func _ready():
 	novelos(municao)
@@ -36,6 +38,7 @@ func _process(delta):
 
 func _physics_process(delta):
 	anim()
+	fase()
 	if derrotado:
 		return
 	
@@ -93,6 +96,7 @@ func novelos(municao: int):
 func coletar_novelos():
 	novelo += 1
 	municao += 1
+	coletaveis += 1
 	novelos(municao)
 
 func anim():
@@ -100,6 +104,23 @@ func anim():
 		mao.play("ocioso0")
 	if municao > 0 and pode_arremessar == true:
 		mao.play("ocioso1")
+
+func fase():
+	if Global.estagio == 0:
+		objetivo.text = "Colete os novelos
+		 %d / 3" %coletaveis
+		if coletaveis == 3:
+			Global.estagio = 1
+	elif Global.estagio == 1:
+		objetivo.text = "Vá para o primeiro andar"
+	elif Global.estagio == 2:
+		objetivo.text = "Colete os
+		 %d / 6" %coletaveis
+		if coletaveis == 6:
+			Global.estagio = 3
+	elif Global.estagio == 3:
+		objetivo.text = "Vá para a cozinha"
+		coletaveis = 0
 
 func interagir_show():
 	interagir.show()
