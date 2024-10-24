@@ -13,44 +13,44 @@
 margin = 0.4
 radius = 0.3
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_j3s7m"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_1hivm"]
 atlas = ExtResource("4_0uun6")
-region = Rect2(625, 0, 625, 625)
+region = Rect2(625, 0, 625, 634)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ak63y"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_bn5rd"]
 atlas = ExtResource("4_0uun6")
-region = Rect2(1250, 0, 625, 625)
+region = Rect2(1250, 0, 625, 634)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_uryn2"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_41qyn"]
 atlas = ExtResource("4_0uun6")
-region = Rect2(1875, 0, 625, 625)
+region = Rect2(1875, 0, 625, 634)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_h13cy"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_3gng5"]
 atlas = ExtResource("4_0uun6")
-region = Rect2(0, 0, 625, 625)
+region = Rect2(2500, 0, 625, 634)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t75ry"]
 atlas = ExtResource("4_0uun6")
 region = Rect2(0, 0, 625, 625)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qyhmn"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_xd6df"]
 atlas = ExtResource("4_0uun6")
-region = Rect2(625, 0, 625, 625)
+region = Rect2(625, 0, 625, 634)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2xfnw"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_j3s7m")
+"texture": SubResource("AtlasTexture_1hivm")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ak63y")
+"texture": SubResource("AtlasTexture_bn5rd")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_uryn2")
+"texture": SubResource("AtlasTexture_41qyn")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_h13cy")
+"texture": SubResource("AtlasTexture_3gng5")
 }],
 "loop": false,
 "name": &"arremessar",
@@ -66,7 +66,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qyhmn")
+"texture": SubResource("AtlasTexture_xd6df")
 }],
 "loop": false,
 "name": &"ocioso1",
@@ -230,7 +230,7 @@ grow_vertical = 0
 [node name="Mao" type="AnimatedSprite2D" parent="UI jogador/MarginContainer/Pov/Mao"]
 position = Vector2(-583, -273)
 sprite_frames = SubResource("SpriteFrames_2xfnw")
-animation = &"ocioso1"
+animation = &"arremessar"
 
 [node name="Menu" type="Control" parent="UI jogador/MarginContainer"]
 visible = false
